@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Why Engauge Learning</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Raleway:wght@500;600&display=swap" rel="stylesheet" />
+    <style>
+        :root {
+            color-scheme: light;
+            font-family: "Poppins", "Raleway", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            --color-cobalt: #0047AB;
+            --color-charcoal: #1D1D1D;
+            --color-pearl: #EDEDED;
+            --color-panel: #F4F9FB;
+            --color-muted: rgba(29, 29, 29, 0.72);
+            --color-shadow: rgba(0, 0, 0, 0.08);
+            --color-shadow-soft: rgba(0, 0, 0, 0.04);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            color: var(--color-charcoal);
+        }
+
+        .why-section {
+            width: min(1200px, 100%);
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        .why-copy {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            text-align: center;
+        }
+
+        .why-chip {
+            align-self: center;
+            padding: 6px 16px;
+            border-radius: 999px;
+            font-size: 13px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            font-weight: 600;
+            background: rgba(0, 71, 171, 0.1);
+            color: var(--color-cobalt);
+        }
+
+        .why-title {
+            margin: 0;
+            font-family: "Raleway", "Poppins", sans-serif;
+            font-size: 36px;
+            font-weight: 600;
+        }
+
+        .why-subtitle {
+            margin: 0;
+            font-size: 16px;
+            color: var(--color-muted);
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 28px;
+        }
+
+        .why-card {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            padding: 28px;
+            border-radius: 22px;
+            background: var(--color-panel);
+            border: 1px solid rgba(0, 71, 171, 0.08);
+            box-shadow: 0 16px 32px var(--color-shadow), 0 4px 16px var(--color-shadow-soft);
+        }
+
+        .why-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 16px;
+            object-fit: cover;
+        }
+
+        .why-card h3 {
+            margin: 0;
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--color-charcoal);
+        }
+
+        .why-card p {
+            margin: 0;
+            font-size: 14px;
+            line-height: 1.6;
+            color: var(--color-muted);
+        }
+
+        @media (min-width: 1024px) {
+            .why-grid {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section class="why-section">
+        <div class="why-copy">
+        </div>
+        <div class="why-grid">
+            <article class="why-card">
+                <img class="why-icon" src="https://imgproxy.learnyst.com/learnyst-user-assets/websites/191573/images/calendar_plan_icon_lyst1762946131801.png" alt="Calendar planning icon" />
+                <h3>Live Learning Rituals</h3>
+                <p>Weekly live rooms blend coaching, peer critique, and practice drills so you turn ideas into consistent reps.</p>
+            </article>
+            <article class="why-card">
+                <img class="why-icon" src="https://imgproxy.learnyst.com/learnyst-user-assets/websites/191573/images/rocket_icon_lyst1762946209587.png" alt="Rocket icon" />
+                <h3>Momentum Dashboards</h3>
+                <p>Track skill streaks, deliverables, and audience metrics from one cockpit to see exactly where to iterate.</p>
+            </article>
+            <article class="why-card">
+                <img class="why-icon" src="https://imgproxy.learnyst.com/learnyst-user-assets/websites/191573/images/lock_shield_security_icon_lyst1762946300098.png" alt="Shield security icon" />
+                <h3>Safe Collaboration</h3>
+                <p>Private workspaces let you swap drafts with mentors securely, with watermarking and audit trails by default.</p>
+            </article>
+            <article class="why-card">
+                <img class="why-icon" src="https://imgproxy.learnyst.com/learnyst-user-assets/websites/191573/images/ai_assistant_icon_lyst1762946378544.png" alt="AI assistant icon" />
+                <h3>AI Co-Pilot</h3>
+                <p>Guided templates and critique bots give fast copy, hook, and script suggestions tuned to your tone.</p>
+            </article>
+            <article class="why-card">
+                <img class="why-icon" src="https://imgproxy.learnyst.com/learnyst-user-assets/websites/191573/images/community_icon_lyst1762946448802.png" alt="Community icon" />
+                <h3>Creator Pods</h3>
+                <p>Curated accountability pods pair you with peers at a similar stage to unblock each other in real time.</p>
+            </article>
+            <article class="why-card">
+                <img class="why-icon" src="https://imgproxy.learnyst.com/learnyst-user-assets/websites/191573/images/library_icon_lyst1762946521866.png" alt="Library archive icon" />
+                <h3>Signal Library</h3>
+                <p>Best-in-class teardown vault captures platform shifts, winning scripts, and outreach frameworks weekly.</p>
+            </article>
+        </div>
+    </section>
+</body>
+
+</html>
