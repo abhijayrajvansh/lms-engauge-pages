@@ -8,8 +8,9 @@
     <title>Why Engauge Learning</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Raleway:wght@500;600&display=swap" rel="stylesheet" />
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
         :root {
             color-scheme: light;
             font-family: "Poppins", "Raleway", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -80,7 +81,7 @@
             gap: 28px;
         }
 
-        .why-card {
+        .why-card-1 {
             display: flex;
             flex-direction: column;
             gap: 18px;
@@ -98,17 +99,20 @@
             object-fit: cover;
         }
 
-        .why-card h3 {
+        .why-card-1 h3 {
             margin: 0;
             font-size: 20px;
             font-weight: 600;
+            font-family: "Raleway", sans-serif;
             color: var(--color-charcoal);
         }
 
-        .why-card p {
-            margin: 0;
-            font-size: 13px;
-            line-height: 1.6;
+        .why-description {
+            margin: 8px 0 0;
+            font-size: 8px;
+            line-height: 1.5;
+            font-family: "Poppins", sans-serif;
+            font-weight: 400;
             color: var(--color-muted);
         }
 
@@ -125,35 +129,35 @@
         <div class="why-copy">
         </div>
         <div class="why-grid">
-            <article class="why-card">
+            <article class="why-card-1">
                 <img class="why-icon" src="https://imgproxy.learnyst.com/learnyst-user-assets/websites/191573/images/pngtree_diverse_group_of_people_gathered_around_a_large_target_board_png_image_17653466_lyst1762945287481.webp" alt="Calendar planning icon" />
                 <h3>Creator-First, Creator-Centric Approach</h3>
-                <p>Every course is designed by creators, for creators. We understand your challenges because we live them.</p>
+                <p class="why-description">Every course is designed by creators, for creators. We understand your challenges because we live them.</p>
             </article>
-            <article class="why-card">
+            <article class="why-card-1">
                 <img class="why-icon" src="https://imgproxy.learnyst.com/learnyst-user-assets/websites/191573/images/3d_illustration_of_a_data_visualization_dashboard_showing_bar_pie_charts_and_analytics_for_business_insights_png_lyst1762945328158.webp" alt="Rocket icon" />
                 <h3>Data-Backed Learning</h3>
-                <p>Every strategy and tactic is backed by real data and market insights - no guesswork, no fluff.</p>
+                <p class="why-description">Every strategy and tactic is backed by real data and market insights - no guesswork, no fluff.</p>
             </article>
-            <article class="why-card">
+            <article class="why-card-1">
                 <img class="why-icon" src="https://imgproxy.learnyst.com/learnyst-user-assets/websites/191573/images/11698467_lyst1762945384124.png" alt="AI assistant icon" />
                 <h3>AI-Powered Learning</h3>
-                <p>Leverage AI tools integrated throughout the curriculum to accelerate your learning and content creation.</p>
+                <p class="why-description">Leverage AI tools integrated throughout the curriculum to accelerate your learning and content creation.</p>
             </article>
-            <article class="why-card">
+            <article class="why-card-1">
                 <img class="why-icon" src="https://imgproxy.learnyst.com/learnyst-user-assets/websites/191573/images/pngtree_winding_road_infographic_template_with_milestone_points_png_image_8723179_lyst1762945418774.png" alt="Community icon" />
                 <h3>End-to-End Journey</h3>
-                <p>From niche selection to first brand deal - we cover the complete creator lifecycle in one academy.</p>
+                <p class="why-description">From niche selection to first brand deal - we cover the complete creator lifecycle in one academy.</p>
             </article>
-            <article class="why-card">
+            <article class="why-card-1">
                 <img class="why-icon" src="https://imgproxy.learnyst.com/learnyst-user-assets/websites/191573/images/10352540_lyst1762945502927.png" alt="Library archive icon" />
                 <h3>Taught by Authentic Market Leaders</h3>
-                <p>Learn from creators who are actually doing it, not just talking about it. Real experience, real credibility.</p>
+                <p class="why-description">Learn from creators who are actually doing it, not just talking about it. Real experience, real credibility.</p>
             </article>
-            <article class="why-card">
+            <article class="why-card-1">
                 <img class="why-icon" src="https://imgproxy.learnyst.com/learnyst-user-assets/websites/191573/images/pngtree_vector_red_toolbox_with_tool_kit_png_image_8544472_lyst1762945523175.png" alt="Shield security icon" />
                 <h3>Practical-First Approach</h3>
-                <p>Templates, tools, worksheets, and real assignments - not theory. Apply immediately.</p>
+                <p class="why-description">Templates, tools, worksheets, and real assignments - not theory. Apply immediately.</p>
             </article>
         </div>
     </section>
