@@ -1,0 +1,95 @@
+<style>
+    .faq-section {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px 32px;
+        font-family: "Poppins", "Raleway", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    .faq-column {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .faq-card {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 28px;
+        border-radius: 18px;
+        background: linear-gradient(135deg, rgba(0, 71, 171, 0.08), rgba(237, 237, 237, 0.95));
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+        color: #1D1D1D;
+        font-size: 18px;
+        letter-spacing: 0.01em;
+    }
+
+    .faq-card:nth-child(even) {
+        background: linear-gradient(135deg, rgba(237, 237, 237, 0.92), rgba(0, 71, 171, 0.12));
+    }
+
+    .faq-card span {
+        font-weight: 500;
+    }
+
+    .faq-icon {
+        width: 16px;
+        height: 16px;
+        position: relative;
+    }
+
+    .faq-icon::before {
+        content: "";
+        position: absolute;
+        top: 4px;
+        left: 2px;
+        width: 0;
+        height: 0;
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        border-top: 8px solid #1D1D1D;
+    }
+</style>
+
+<div class="faq-section">
+    <div class="faq-column">
+        <div class="faq-card">
+            <span>Who is this course for?</span>
+            <div class="faq-icon"></div>
+        </div>
+        <div class="faq-card">
+            <span>Do I need prior experience or special skills?</span>
+            <div class="faq-icon"></div>
+        </div>
+        <div class="faq-card">
+            <span>How do I get access to the courses?</span>
+            <div class="faq-icon"></div>
+        </div>
+        <div class="faq-card">
+            <span>Can I access the courses after I purchase them?</span>
+            <div class="faq-icon"></div>
+        </div>
+    </div>
+    <div class="faq-column">
+        <div class="faq-card">
+            <span>When do the courses launch?</span>
+            <div class="faq-icon"></div>
+        </div>
+        <div class="faq-card">
+            <span>Is there community support or mentoring?</span>
+            <div class="faq-icon"></div>
+        </div>
+        <div class="faq-card">
+            <span>What if I do not find the course helpful?</span>
+            <div class="faq-icon"></div>
+        </div>
+        <div class="faq-card">
+            <span>Can I download course materials or access offline?</span>
+            <div class="faq-icon"></div>
+        </div>
+    </div>
+</div>
