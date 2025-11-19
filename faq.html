@@ -22,6 +22,80 @@
             gap: 24px 40px;
         }
 
+        .faq-cta-wrapper {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            margin: 72px auto 96px;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+
+        .faq-cta {
+            width: 100%;
+            max-width: 520px;
+            border-radius: 28px;
+            background: #FFFFFF;
+            box-shadow: 0 24px 40px rgba(0, 0, 0, 0.08);
+            padding: 32px 36px;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+        }
+
+        .faq-cta h3 {
+            margin: 0 0 10px;
+            font-size: 22px;
+            font-weight: 600;
+            color: #1D1D1D;
+        }
+
+        .faq-cta p {
+            margin: 0;
+            font-size: 16px;
+            color: rgba(29, 29, 29, 0.72);
+        }
+
+        .faq-cta-footer {
+            margin-top: 28px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+            align-items: center;
+        }
+
+        .faq-cta-avatars {
+            display: flex;
+            align-items: center;
+        }
+
+        .faq-cta-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            border: 3px solid #FFFFFF;
+            object-fit: cover;
+            margin-left: -14px;
+        }
+
+        .faq-cta-avatar:first-child {
+            margin-left: 0;
+        }
+
+        .cta-button {
+            border: none;
+            border-radius: 30px;
+            padding: 14px 28px;
+            font-size: 16px;
+            font-weight: 500;
+            color: #FFFFFF;
+            background: #1053AF;
+            cursor: pointer;
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.16);
+        }
+
+        .cta-button:hover {
+            opacity: 0.9;
+        }
+
         .faq-column {
             display: flex;
             flex-direction: column;
@@ -112,6 +186,10 @@
             .faq-section {
                 grid-template-columns: 1fr;
             }
+
+            .faq-cta-wrapper {
+                margin: 60px auto;
+            }
         }
 
         @media (max-width: 599px) {
@@ -125,6 +203,15 @@
 
             .faq-question {
                 font-size: 16px;
+            }
+
+            .faq-cta {
+                padding: 28px;
+            }
+
+            .faq-cta-footer {
+                flex-direction: column;
+                align-items: flex-start;
             }
         }
     </style>
@@ -140,7 +227,7 @@
                 </button>
                 <div class="faq-answer-wrapper">
                     <span class="faq-answer">
-                        The academy is for aspiring creators taking their first steps, established educators aiming to scale, and personal brand entrepreneurs seeking clarity on how to monetize ideas. No prior experience is required.
+                        This academy is for anyone who wants to build a creator career - aspiring creators just starting out, established creators wanting to scale, and personal brand entrepreneurs. No prior experience needed.
                     </span>
                 </div>
             </div>
@@ -151,7 +238,7 @@
                 </button>
                 <div class="faq-answer-wrapper">
                     <span class="faq-answer">
-                        You only need curiosity and a willingness to ship. Lessons start with foundations, then layer on tools, workflows, and templates so you can practice as you go.
+                        No. We start from the basics and build up. Whether you're a complete beginner or have some experience, the courses are designed to meet you where you are.
                     </span>
                 </div>
             </div>
@@ -162,7 +249,7 @@
                 </button>
                 <div class="faq-answer-wrapper">
                     <span class="faq-answer">
-                        Enroll through your Engauge dashboard and you will immediately unlock every module. We also send a confirmation email with direct links.
+                        Join the waitlist to be notified when courses launch. Once available, you can enroll and get instant access to all course materials.
                     </span>
                 </div>
             </div>
@@ -173,7 +260,7 @@
                 </button>
                 <div class="faq-answer-wrapper">
                     <span class="faq-answer">
-                        Yes. Your purchase includes lifetime access plus any incremental playbook updates we publish in the future.
+                        Yes. You get lifetime access to all courses you enroll in, including any future updates or additions to the material.
                     </span>
                 </div>
             </div>
@@ -186,7 +273,7 @@
                 </button>
                 <div class="faq-answer-wrapper">
                     <span class="faq-answer">
-                        Cohorts open quarterly. Once you enroll, you get access to the full library of on-demand lessons so you can start immediately.
+                        Courses are launching in phases. Course 9 (Creator Psychology) is live now. Other courses are launching soon. Join the waitlist to get early access.
                     </span>
                 </div>
             </div>
@@ -197,7 +284,7 @@
                 </button>
                 <div class="faq-answer-wrapper">
                     <span class="faq-answer">
-                        Every member joins a private Circle community with weekly office hours, peer reviews, and AMAs with Engauge mentors.
+                        Yes. Submit your queries through the queries section on the course platform and our course experts will respond. You can also reach out via email at contact@engaugelearning.com for support.
                     </span>
                 </div>
             </div>
@@ -208,7 +295,7 @@
                 </button>
                 <div class="faq-answer-wrapper">
                     <span class="faq-answer">
-                        Email us within 14 days and we will either coach you through the blocks or issue a full refund—no hoops to jump through.
+                        We do not offer refunds once purchased. Please refer to our refund policy for complete details.
                     </span>
                 </div>
             </div>
@@ -219,12 +306,33 @@
                 </button>
                 <div class="faq-answer-wrapper">
                     <span class="faq-answer">
-                        Playbooks and worksheets are downloadable PDFs. Video lessons require the dashboard, but you can queue them on mobile or desktop.
+                        Course materials like templates, worksheets, and projects can be downloaded for offline use. However, video courses can only be accessed online through the platform.
                     </span>
                 </div>
             </div>
         </div>
     </section>
+
+    <div class="faq-cta-wrapper">
+        <div class="faq-cta">
+            <h3>Still Have Questions?</h3>
+            <p>Contact us, we are happy to help you</p>
+            <div class="faq-cta-footer">
+                <div class="faq-cta-avatars">
+                    <img class="faq-cta-avatar"
+                        src="https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=facearea&w=150&h=150&q=80"
+                        alt="Student support team member" loading="lazy" />
+                    <img class="faq-cta-avatar"
+                        src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?auto=format&fit=facearea&w=150&h=150&q=80"
+                        alt="Student support team member" loading="lazy" />
+                    <img class="faq-cta-avatar"
+                        src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=facearea&w=150&h=150&q=80"
+                        alt="Student support team member" loading="lazy" />
+                </div>
+                <button class="cta-button">Start Learning Now</button>
+            </div>
+        </div>
+    </div>
 
     <script>
         document.querySelectorAll('.faq-toggle').forEach((button) => {
