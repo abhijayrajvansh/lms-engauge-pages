@@ -1,95 +1,242 @@
-<style>
-    .faq-section {
-        width: 100%;
-        max-width: 1200px;
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 20px 32px;
-        font-family: "Poppins", "Raleway", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    }
+<!DOCTYPE html>
+<html lang="en">
 
-    .faq-column {
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-    }
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FAQ</title>
+    <style>
+        body {
+            margin: 0;
+            background: #F3F6FB;
+            font-family: "Poppins", "Raleway", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            color: #1D1D1D;
+        }
 
-    .faq-card {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 20px 28px;
-        border-radius: 18px;
-        background: linear-gradient(135deg, rgba(0, 71, 171, 0.08), rgba(237, 237, 237, 0.95));
-        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
-        color: #1D1D1D;
-        font-size: 18px;
-        letter-spacing: 0.01em;
-    }
+        .faq-section {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 24px 40px;
+        }
 
-    .faq-card:nth-child(even) {
-        background: linear-gradient(135deg, rgba(237, 237, 237, 0.92), rgba(0, 71, 171, 0.12));
-    }
+        .faq-column {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
 
-    .faq-card span {
-        font-weight: 500;
-    }
+        .faq-card {
+            border: 2px solid #FFFFFF;
+            border-radius: 28px;
+            padding: 28px 36px 32px 36px;
+            background: transparent;
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08), 0 6px 18px rgba(0, 71, 171, 0.08);
+            transition: box-shadow 180ms ease, border-color 180ms ease, background-color 180ms ease;
+        }
 
-    .faq-icon {
-        width: 16px;
-        height: 16px;
-        position: relative;
-    }
+        .faq-card:hover {
+            background: rgba(255, 255, 255, 0.04);
+            border-color: rgba(255, 255, 255, 0.72);
+            box-shadow: 0 24px 44px rgba(0, 0, 0, 0.12), 0 10px 26px rgba(0, 71, 171, 0.14);
+        }
 
-    .faq-icon::before {
-        content: "";
-        position: absolute;
-        top: 4px;
-        left: 2px;
-        width: 0;
-        height: 0;
-        border-left: 6px solid transparent;
-        border-right: 6px solid transparent;
-        border-top: 8px solid #1D1D1D;
-    }
-</style>
+        .faq-toggle {
+            display: flex;
+            width: 100%;
+            align-items: center;
+            justify-content: space-between;
+            gap: 32px;
+            cursor: pointer;
+            padding: 0;
+            background: transparent;
+            border: none;
+            text-align: left;
+        }
 
-<div class="faq-section">
-    <div class="faq-column">
-        <div class="faq-card">
-            <span>Who is this course for?</span>
-            <div class="faq-icon"></div>
+        .faq-question {
+            font-size: 18px;
+            font-weight: 400;
+            letter-spacing: 0.01em;
+            color: #1D1D1D;
+        }
+
+        .faq-icon {
+            width: 20px;
+            height: 20px;
+            position: relative;
+        }
+
+        .faq-icon::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            margin: auto;
+            width: 0;
+            height: 0;
+            border-left: 7px solid transparent;
+            border-right: 7px solid transparent;
+            border-top: 9px solid #1D1D1D;
+            transition: transform 160ms ease;
+        }
+
+        .faq-card[data-open="true"] .faq-icon::before {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer-wrapper {
+            overflow: hidden;
+            max-height: 0;
+            opacity: 0;
+            transition: max-height 220ms ease, opacity 180ms ease;
+        }
+
+        .faq-card[data-open="true"] .faq-answer-wrapper {
+            max-height: 400px;
+            opacity: 1;
+            margin-top: 18px;
+        }
+
+        .faq-answer {
+            display: block;
+            margin: 0;
+            font-size: 15px;
+            line-height: 1.7;
+            color: rgba(29, 29, 29, 0.82);
+            font-weight: 400;
+        }
+
+        @media (max-width: 900px) {
+            .faq-section {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 599px) {
+            body {
+                padding: 48px 20px 72px;
+            }
+
+            .faq-card {
+                padding: 20px 24px;
+            }
+
+            .faq-question {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section class="faq-section">
+        <div class="faq-column">
+            <div class="faq-card" data-open="false">
+                <button class="faq-toggle" aria-expanded="false">
+                    <span class="faq-question">Who is this course for?</span>
+                    <span class="faq-icon" aria-hidden="true"></span>
+                </button>
+                <div class="faq-answer-wrapper">
+                    <span class="faq-answer">
+                        The academy is for aspiring creators taking their first steps, established educators aiming to scale, and personal brand entrepreneurs seeking clarity on how to monetize ideas. No prior experience is required.
+                    </span>
+                </div>
+            </div>
+            <div class="faq-card" data-open="false">
+                <button class="faq-toggle" aria-expanded="false">
+                    <span class="faq-question">Do I need prior experience or special skills?</span>
+                    <span class="faq-icon" aria-hidden="true"></span>
+                </button>
+                <div class="faq-answer-wrapper">
+                    <span class="faq-answer">
+                        You only need curiosity and a willingness to ship. Lessons start with foundations, then layer on tools, workflows, and templates so you can practice as you go.
+                    </span>
+                </div>
+            </div>
+            <div class="faq-card" data-open="false">
+                <button class="faq-toggle" aria-expanded="false">
+                    <span class="faq-question">How do I get access to the courses?</span>
+                    <span class="faq-icon" aria-hidden="true"></span>
+                </button>
+                <div class="faq-answer-wrapper">
+                    <span class="faq-answer">
+                        Enroll through your Engauge dashboard and you will immediately unlock every module. We also send a confirmation email with direct links.
+                    </span>
+                </div>
+            </div>
+            <div class="faq-card" data-open="false">
+                <button class="faq-toggle" aria-expanded="false">
+                    <span class="faq-question">Can I access the courses after I purchase them?</span>
+                    <span class="faq-icon" aria-hidden="true"></span>
+                </button>
+                <div class="faq-answer-wrapper">
+                    <span class="faq-answer">
+                        Yes. Your purchase includes lifetime access plus any incremental playbook updates we publish in the future.
+                    </span>
+                </div>
+            </div>
         </div>
-        <div class="faq-card">
-            <span>Do I need prior experience or special skills?</span>
-            <div class="faq-icon"></div>
+        <div class="faq-column">
+            <div class="faq-card" data-open="false">
+                <button class="faq-toggle" aria-expanded="false">
+                    <span class="faq-question">When do the courses launch?</span>
+                    <span class="faq-icon" aria-hidden="true"></span>
+                </button>
+                <div class="faq-answer-wrapper">
+                    <span class="faq-answer">
+                        Cohorts open quarterly. Once you enroll, you get access to the full library of on-demand lessons so you can start immediately.
+                    </span>
+                </div>
+            </div>
+            <div class="faq-card" data-open="false">
+                <button class="faq-toggle" aria-expanded="false">
+                    <span class="faq-question">Is there community support or mentoring?</span>
+                    <span class="faq-icon" aria-hidden="true"></span>
+                </button>
+                <div class="faq-answer-wrapper">
+                    <span class="faq-answer">
+                        Every member joins a private Circle community with weekly office hours, peer reviews, and AMAs with Engauge mentors.
+                    </span>
+                </div>
+            </div>
+            <div class="faq-card" data-open="false">
+                <button class="faq-toggle" aria-expanded="false">
+                    <span class="faq-question">What if I do not find the course helpful?</span>
+                    <span class="faq-icon" aria-hidden="true"></span>
+                </button>
+                <div class="faq-answer-wrapper">
+                    <span class="faq-answer">
+                        Email us within 14 days and we will either coach you through the blocks or issue a full refund—no hoops to jump through.
+                    </span>
+                </div>
+            </div>
+            <div class="faq-card" data-open="false">
+                <button class="faq-toggle" aria-expanded="false">
+                    <span class="faq-question">Can I download course materials or access offline?</span>
+                    <span class="faq-icon" aria-hidden="true"></span>
+                </button>
+                <div class="faq-answer-wrapper">
+                    <span class="faq-answer">
+                        Playbooks and worksheets are downloadable PDFs. Video lessons require the dashboard, but you can queue them on mobile or desktop.
+                    </span>
+                </div>
+            </div>
         </div>
-        <div class="faq-card">
-            <span>How do I get access to the courses?</span>
-            <div class="faq-icon"></div>
-        </div>
-        <div class="faq-card">
-            <span>Can I access the courses after I purchase them?</span>
-            <div class="faq-icon"></div>
-        </div>
-    </div>
-    <div class="faq-column">
-        <div class="faq-card">
-            <span>When do the courses launch?</span>
-            <div class="faq-icon"></div>
-        </div>
-        <div class="faq-card">
-            <span>Is there community support or mentoring?</span>
-            <div class="faq-icon"></div>
-        </div>
-        <div class="faq-card">
-            <span>What if I do not find the course helpful?</span>
-            <div class="faq-icon"></div>
-        </div>
-        <div class="faq-card">
-            <span>Can I download course materials or access offline?</span>
-            <div class="faq-icon"></div>
-        </div>
-    </div>
-</div>
+    </section>
+
+    <script>
+        document.querySelectorAll('.faq-toggle').forEach((button) => {
+            button.addEventListener('click', (event) => {
+                event.preventDefault();
+                const card = button.closest('.faq-card');
+                const isOpen = card.getAttribute('data-open') === 'true';
+                card.setAttribute('data-open', String(!isOpen));
+                button.setAttribute('aria-expanded', String(!isOpen));
+            });
+        });
+    </script>
+</body>
+
+</html>
