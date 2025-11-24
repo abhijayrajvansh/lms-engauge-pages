@@ -39,6 +39,7 @@
             box-shadow: 0 24px 40px rgba(0, 0, 0, 0.08);
             padding: 32px 36px;
             border: 1px solid rgba(0, 0, 0, 0.04);
+            text-align: center;
         }
 
         .faq-cta h3 {
@@ -60,11 +61,13 @@
             flex-wrap: wrap;
             gap: 18px;
             align-items: center;
+            justify-content: center;
         }
 
         .faq-cta-avatars {
             display: flex;
             align-items: center;
+            justify-content: center;
         }
 
         .faq-cta-avatar {
@@ -211,7 +214,7 @@
 
             .faq-cta-footer {
                 flex-direction: column;
-                align-items: flex-start;
+                align-items: center;
             }
         }
     </style>
@@ -335,13 +338,29 @@
     </div>
 
     <script>
+        const faqCards = document.querySelectorAll('.faq-card');
+
+        const toggleCard = (card, shouldOpen) => {
+            card.setAttribute('data-open', String(shouldOpen));
+            const toggle = card.querySelector('.faq-toggle');
+            if (toggle) {
+                toggle.setAttribute('aria-expanded', String(shouldOpen));
+            }
+        };
+
         document.querySelectorAll('.faq-toggle').forEach((button) => {
             button.addEventListener('click', (event) => {
                 event.preventDefault();
                 const card = button.closest('.faq-card');
                 const isOpen = card.getAttribute('data-open') === 'true';
-                card.setAttribute('data-open', String(!isOpen));
-                button.setAttribute('aria-expanded', String(!isOpen));
+
+                faqCards.forEach((faqCard) => {
+                    if (faqCard !== card) {
+                        toggleCard(faqCard, false);
+                    }
+                });
+
+                toggleCard(card, !isOpen);
             });
         });
     </script>
