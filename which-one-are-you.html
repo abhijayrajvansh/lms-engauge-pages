@@ -14,40 +14,9 @@
         font-weight: 700;
     }
 
-    .which-one-are-you .cta-button-1 {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-        padding: 12px 20px;
-        border-radius: 999px;
-        background: #FFFFFF;
-        font-size: 16px;
-        font-weight: 600;
-        text-decoration: none;
-        border: none;
-        cursor: pointer;
-        transition: background 0.2s ease, color 0.2s ease;
-        width: 100%;
-        color: #0047AB;
-    }
-
+    .which-one-are-you .cta-button-1,
     .which-one-are-you .cta-button-2 {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-        padding: 12px 20px;
-        border-radius: 999px;
-        background: #FFFFFF;
-        font-size: 16px;
-        font-weight: 600;
-        text-decoration: none;
-        border: none;
-        cursor: pointer;
-        transition: background 0.2s ease, color 0.2s ease;
-        width: 100%;
-        color: #1D1D1D;
+        display: none;
     }
 
     .which-one-are-you .cta-button:hover {
@@ -59,14 +28,29 @@
         grid-column: 1 / -1;
         text-align: center;
     }
+
+    .which-one-are-you .description {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        padding-left: 0;
+        margin: 0 0 20px 0;
+        line-height: 1.7;
+        font-size: 14px;
+    }
+
+    .which-one-are-you .description span {
+        display: block;
+    }
 </style>
 <div class="which-one-are-you" style="
     display:grid;
-    grid-template-columns:repeat(2, 1fr);
+    grid-template-columns:repeat(4, 1fr);
     gap:32px;
     max-width:1200px;
     margin:0 auto;
     padding:40px 0;
+    overflow-x:auto;
 ">
 
     <!-- CARD 1 -->
@@ -76,7 +60,7 @@
         padding:32px;
         border-radius:24px;
     ">
-        <h2 style="margin:0; font-size:23px; font-weight:600;">
+        <h2 style="margin:0; font-size:20px; font-weight:600;">
             YOU'RE THINKING ABOUT STARTING
         </h2>
 
@@ -89,7 +73,7 @@
             <span style="
                 display:inline-flex;
                 align-items:center;
-                font-size:14px;
+                font-size:12px;
                 font-weight:500;
                 color:#FFFFFF;
                 padding:6px 16px;
@@ -101,7 +85,7 @@
             <span style="
                 display:inline-flex;
                 align-items:center;
-                font-size:14px;
+                font-size:12px;
                 font-weight:500;
                 color:#FFFFFF;
                 padding:6px 16px;
@@ -113,7 +97,7 @@
             <span style="
                 display:inline-flex;
                 align-items:center;
-                font-size:14px;
+                font-size:12px;
                 font-weight:500;
                 color:#FFFFFF;
                 padding:6px 16px;
@@ -130,16 +114,16 @@
             margin:20px 0;
         " />
 
-        <h3 style="font-size:20px; margin:0 0 12px 0;">
+        <h3 style="font-size:18px; margin:0 0 12px 0;">
             Common challenges:
         </h3>
 
-        <ul style="padding-left:20px; margin:0 0 20px 0; line-height:1.7;">
-            <li>Should I even start creating?</li>
-            <li>What niche fits me?</li>
-            <li>Will I burn out in 6 months?</li>
-            <li>How do I not make common mistakes?</li>
-        </ul>
+        <div class="description">
+            <span>Should I even start creating?</span>
+            <span>What niche fits me?</span>
+            <span>Will I burn out in 6 months?</span>
+            <span>How do I not make common mistakes?</span>
+        </div>
 
         <a href="#" class="cta-button-1">
             <span aria-hidden="true">→</span>
@@ -154,7 +138,7 @@
         padding:32px;
         border-radius:24px;
     ">
-        <h2 style="margin:0; font-size:23px; font-weight:600;">
+        <h2 style="margin:0; font-size:20px; font-weight:600;">
             YOU HAVE JUST STARTED
         </h2>
 
@@ -167,7 +151,7 @@
             <span style="
                 display:inline-flex;
                 align-items:center;
-                font-size:14px;
+                font-size:12px;
                 font-weight:500;
                 color:#FFFFFF;
                 padding:6px 16px;
@@ -179,7 +163,7 @@
             <span style="
                 display:inline-flex;
                 align-items:center;
-                font-size:14px;
+                font-size:12px;
                 font-weight:500;
                 color:#FFFFFF;
                 padding:6px 16px;
@@ -196,16 +180,16 @@
             margin:20px 0;
         " />
 
-        <h3 style="font-size:20px; margin:0 0 12px 0;">
+        <h3 style="font-size:18px; margin:0 0 12px 0;">
             Common challenges:
         </h3>
 
-        <ul style="padding-left:20px; margin:0 0 20px 0; line-height:1.7;">
-            <li>Why aren't my videos getting views?</li>
-            <li>Is my content strategy even right?</li>
-            <li>How do I stay consistent without burning out?</li>
-            <li>What platform should I focus on?</li>
-        </ul>
+        <div class="description">
+            <span>Why aren't my videos getting views?</span>
+            <span>Is my content strategy even right?</span>
+            <span>How do I stay consistent without burning out?</span>
+            <span>What platform should I focus on?</span>
+        </div>
 
         <a href="#" class="cta-button-2">
             <span aria-hidden="true">→</span>
@@ -220,7 +204,7 @@
         padding:32px;
         border-radius:24px;
     ">
-        <h2 style="margin:0; font-size:23px; font-weight:600;">
+        <h2 style="margin:0; font-size:20px; font-weight:600;">
             YOU'RE BUILDING YOUR PERSONAL BRAND
         </h2>
 
@@ -233,7 +217,7 @@
             <span style="
                 display:inline-flex;
                 align-items:center;
-                font-size:14px;
+                font-size:12px;
                 font-weight:500;
                 color:#FFFFFF;
                 padding:6px 16px;
@@ -245,7 +229,7 @@
             <span style="
                 display:inline-flex;
                 align-items:center;
-                font-size:14px;
+                font-size:12px;
                 font-weight:500;
                 color:#FFFFFF;
                 padding:6px 16px;
@@ -262,16 +246,16 @@
             margin:20px 0;
         " />
 
-        <h3 style="font-size:20px; margin:0 0 12px 0;">
+        <h3 style="font-size:18px; margin:0 0 12px 0;">
             Common challenges:
         </h3>
 
-        <ul style="padding-left:20px; margin:0 0 20px 0; line-height:1.7;">
-            <li>How do I build authority in my niche?</li>
-            <li>How do I turn followers into business?</li>
-            <li>What's the legal/tax side of this?</li>
-            <li>How do I do this alongside my day job?</li>
-        </ul>
+        <div class="description">
+            <span>How do I build authority in my niche?</span>
+            <span>How do I turn followers into business?</span>
+            <span>What's the legal/tax side of this?</span>
+            <span>How do I do this alongside my day job?</span>
+        </div>
 
         <a href="#" class="cta-button-2">
             <span aria-hidden="true">→</span>
@@ -286,7 +270,7 @@
         padding:32px;
         border-radius:24px;
     ">
-        <h2 style="margin:0; font-size:23px; font-weight:600;">
+        <h2 style="margin:0; font-size:20px; font-weight:600;">
             YOU'RE STUCK (6+ MONTHS IN)
         </h2>
 
@@ -299,7 +283,7 @@
             <span style="
                 display:inline-flex;
                 align-items:center;
-                font-size:14px;
+                font-size:12px;
                 font-weight:500;
                 color:#FFFFFF;
                 padding:6px 16px;
@@ -311,7 +295,7 @@
             <span style="
                 display:inline-flex;
                 align-items:center;
-                font-size:14px;
+                font-size:12px;
                 font-weight:500;
                 color:#FFFFFF;
                 padding:6px 16px;
@@ -323,7 +307,7 @@
             <span style="
                 display:inline-flex;
                 align-items:center;
-                font-size:14px;
+                font-size:12px;
                 font-weight:500;
                 color:#FFFFFF;
                 padding:6px 16px;
@@ -340,16 +324,16 @@
             margin:20px 0;
         " />
 
-        <h3 style="font-size:20px; margin:0 0 12px 0;">
+        <h3 style="font-size:18px; margin:0 0 12px 0;">
             Common challenges:
         </h3>
 
-        <ul style="padding-left:20px; margin:0 0 20px 0; line-height:1.7;">
-            <li>My growth has flatlined</li>
-            <li>I'm mentally exhausted from creating</li>
-            <li>I don't know my next move</li>
-            <li>How do I monetize what I've built?</li>
-        </ul>
+        <div class="description">
+            <span>My growth has flatlined</span>
+            <span>I'm mentally exhausted from creating</span>
+            <span>I don't know my next move</span>
+            <span>How do I monetize what I've built?</span>
+        </div>
 
         <a href="#" class="cta-button-1">
             <span aria-hidden="true">→</span>
