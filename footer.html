@@ -16,19 +16,21 @@
         .footer-main {
             display: flex;
             justify-content: space-between;
-            flex-wrap: wrap;
+            flex-wrap: nowrap;
             gap: 48px;
+            align-items: flex-start;
         }
 
         .brand-block {
             display: flex;
             flex-direction: column;
             gap: 0;
+            flex: 0 0 220px;
         }
 
         .brand-logo {
-            width: 320px;
-            margin-bottom: 32px;
+            width: 220px;
+            margin-bottom: 24px;
         }
 
         .brand-logo img {
@@ -39,35 +41,38 @@
 
         .social-links {
             display: flex;
-            gap: 16px;
-            margin-bottom: 32px;
+            gap: 12px;
+            margin-bottom: 24px;
         }
 
         .social-links img {
-            width: 48px;
-            height: 48px;
-            border-radius: 12px;
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
             object-fit: cover;
         }
 
         .contact-block {
             display: flex;
             flex-direction: column;
-            gap: 16px;
-            min-width: 240px;
+            gap: 12px;
         }
 
         .contact-item {
             display: flex;
             align-items: center;
             gap: 12px;
-            font-size: 16px;
+            font-size: 15px;
+        }
+
+        .contact-item span {
+            color: rgba(255, 255, 255, 0.92);
         }
 
         .contact-icon {
-            width: 40px;
-            height: 40px;
-            border-radius: 10px;
+            width: 28px;
+            height: 28px;
+            border-radius: 8px;
             display: block;
             object-fit: cover;
         }
@@ -78,18 +83,12 @@
             background-color: rgba(255, 255, 255, 0.18);
         }
 
-        .footer-links {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 48px;
-        }
-
         .footer-column {
             min-width: 180px;
             display: flex;
             flex-direction: column;
             gap: 16px;
+            flex: 0 1 180px;
         }
 
         .footer-column h4 {
@@ -153,8 +152,13 @@
                 flex-direction: column;
             }
 
-            .footer-links {
-                flex-direction: column;
+            .brand-block {
+                flex: 1 1 auto;
+            }
+
+            .footer-column {
+                width: 100%;
+                flex: 1 1 auto;
             }
 
             .policy-links {
@@ -164,7 +168,7 @@
         }
     </style>
 
-    <div class="footer-main">
+    <div class="footer-main" style="align-items: flex-start;">
         <div class="brand-block">
             <div class="brand-logo">
                 <img src="https://imgproxy.learnyst.com/learnyst-user-assets/websites/191573/images/Secondary_Logo_Cropped_BG_lyst1763021344775.jpg" alt="Engauge Learning" />
@@ -177,20 +181,7 @@
                 <img src="https://imgproxy.learnyst.com/learnyst-user-assets/websites/191573/images/youtube_modified_lyst1763020425053.png" alt="YouTube" />
             </div>
         </div>
-        <div class="contact-block">
-            <div class="contact-item">
-                <img class="contact-icon" src="https://imgproxy.learnyst.com/learnyst-user-assets/websites/191687/images/phone_modified_lyst1763532439781.png" alt="Phone" />
-                <span>9820344284</span>
-            </div>
-            <div class="contact-item">
-                <img class="contact-icon" src="https://imgproxy.learnyst.com/learnyst-user-assets/websites/191687/images/email_modified_lyst1763532446170.png" alt="Email" />
-                <span>info@engaugelearning.com</span>
-            </div>
-        </div>
-    </div>
-    <div class="divider"></div>
-    <div class="footer-links">
-        <div class="footer-column">
+        <div class="footer-column" style="margin-top: 0;">
             <h4>Company</h4>
             <ul>
                 <li><a href="#">About Us</a></li>
@@ -198,19 +189,32 @@
                 <li><a href="#">Contact Us</a></li>
             </ul>
         </div>
-        <div class="footer-column">
+        <div class="footer-column" style="margin-top: 0;">
             <h4>Courses</h4>
             <ul>
                 <li><a href="#">All Courses</a></li>
                 <li><a href="#">Course Categories</a></li>
             </ul>
         </div>
-        <div class="footer-column">
+        <div class="footer-column" style="margin-top: 0;">
             <h4>Support</h4>
             <ul>
                 <li><a href="#">FAQ</a></li>
                 <li><a href="#">Help Center</a></li>
             </ul>
+        </div>
+        <div class="footer-column" style="margin-top: 0;">
+            <h4>Contact</h4>
+            <div class="contact-block">
+                <div class="contact-item">
+                    <img class="contact-icon" src="https://imgproxy.learnyst.com/learnyst-user-assets/websites/191687/images/phone_modified_lyst1763532439781.png" alt="Phone" />
+                    <span>9820344284</span>
+                </div>
+                <div class="contact-item">
+                    <img class="contact-icon" src="https://imgproxy.learnyst.com/learnyst-user-assets/websites/191687/images/email_modified_lyst1763532446170.png" alt="Email" />
+                    <span>info@engaugelearning.com</span>
+                </div>
+            </div>
         </div>
     </div>
     <div class="divider"></div>
