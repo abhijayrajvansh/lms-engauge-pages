@@ -34,7 +34,7 @@
 
         .nav-links a {
             text-decoration: none;
-            color: #1D1D1D;
+            color: #000000;
         }
 
         .nav-links a:hover {
@@ -84,18 +84,25 @@
             border-radius: 6px;
             cursor: pointer;
             transition: 0.2s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border: none;
         }
 
         .btn-outline {
             border: 1px solid #0047AB;
             background-color: #f7f9ff;
-            color: #0047AB;
+            color: #0C54AF;
         }
 
-        .btn-secondary {
+        .btn-secondary,
+        .btn-secondary:link,
+        .btn-secondary:visited {
             border: none;
             background-color: #0047AB;
-            color: white;
+            color: #FFFFFF;
         }
     </style>
 </head>
@@ -120,8 +127,8 @@
 
         <!-- Buttons -->
         <div class="buttons">
-            <button class="btn btn-outline" href="https://engauge-learning.learnyst.com/learn/account/signin">SIGN IN</button>
-            <button class="btn btn-secondary" href="https://engauge-learning.learnyst.com/learn/account/signup">SIGN UP</button>
+            <a class="btn btn-outline" href="https://engauge-learning.learnyst.com/learn/account/signin">SIGN IN</a>
+            <a class="btn btn-secondary" href="https://engauge-learning.learnyst.com/learn/account/signup">SIGN UP</a>
         </div>
 
     </div>
