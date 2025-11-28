@@ -26,6 +26,22 @@
             /* Replace with your logo */
         }
 
+        .nav-links {
+            display: flex;
+            gap: 24px;
+            font-size: 18px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #1D1D1D;
+        }
+
+        .nav-links a:hover {
+            color: #064DAD;
+            text-decoration: underline;
+        }
+
         .search-box {
             flex: 1;
             display: flex;
@@ -94,10 +110,18 @@
             <img src="https://imgproxy.learnyst.com/learnyst-user-assets/websites/191687/images/Primary_Logo_lyst1763451833535.png" alt="Logo">
         </div>
 
+        <!-- Navigation Links -->
+        <nav class="nav-links">
+            <a href="#about">About Us</a>
+            <a href="#courses">Courses</a>
+            <a href="#contact">Contact Us</a>
+            <a href="#mentor">Apply as Mentor</a>
+        </nav>
+
         <!-- Buttons -->
         <div class="buttons">
-            <button class="btn btn-outline">SIGN IN</button>
-            <button class="btn btn-secondary">SIGN UP</button>
+            <button class="btn btn-outline" href="https://engauge-learning.learnyst.com/learn/account/signin">SIGN IN</button>
+            <button class="btn btn-secondary" href="https://engauge-learning.learnyst.com/learn/account/signup">SIGN UP</button>
         </div>
 
     </div>
