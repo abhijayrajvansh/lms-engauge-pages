@@ -32,6 +32,7 @@
         width: 100%;
         overflow: hidden;
         position: relative;
+        transition: height 0.25s ease;
     }
 
     .which-one-are-you .card-track {
@@ -39,15 +40,16 @@
         transition: transform 0.45s ease;
         will-change: transform;
         column-gap: 24px;
+        align-items: flex-start;
     }
 
     .which-one-are-you .card {
         display: flex;
         flex-direction: column;
-        height: 100%;
         min-width: 95%;
         flex: 0 0 95%;
         max-width: 95%;
+        height: auto;
     }
 
     .which-one-are-you .card-top {
@@ -469,16 +471,6 @@
         let slideWidth = 0;
         let gap = 0;
         let leftoverSpace = 0;
-        const setEqualHeights = () => {
-            let tallest = 0;
-            slides.forEach((slide) => {
-                slide.style.height = "auto";
-                tallest = Math.max(tallest, slide.getBoundingClientRect().height);
-            });
-            slides.forEach((slide) => {
-                slide.style.height = `${tallest}px`;
-            });
-        };
 
         const measure = () => {
             const firstSlide = slides[0];
@@ -493,8 +485,11 @@
         };
 
         const updateSlider = () => {
-            setEqualHeights();
             measure();
+            const activeSlide = slides[currentIndex];
+            if (shell && activeSlide) {
+                shell.style.height = `${activeSlide.offsetHeight}px`;
+            }
             const slideFullWidth = slideWidth + gap;
             let offset = leftoverSpace / 2;
             if (currentIndex === 0) {
