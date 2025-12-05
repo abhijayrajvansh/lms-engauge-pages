@@ -46,9 +46,9 @@
     .which-one-are-you .card {
         display: flex;
         flex-direction: column;
-        min-width: 95%;
-        flex: 0 0 95%;
-        max-width: 95%;
+        min-width: 70%;
+        flex: 0 0 70%;
+        max-width: 70%;
         height: auto;
     }
 
@@ -462,7 +462,7 @@
         const shell = slider?.querySelector(".carousel-shell");
         const prevButton = slider?.querySelector("[data-persona-nav=\"prev\"]");
         const nextButton = slider?.querySelector("[data-persona-nav=\"next\"]");
-        if (!track || !prevButton || !nextButton) {
+        if (!track || !shell || !prevButton || !nextButton) {
             return;
         }
 
@@ -472,9 +472,17 @@
         let gap = 0;
         let leftoverSpace = 0;
 
+        const setShellHeight = () => {
+            const activeSlide = slides[currentIndex];
+            if (!activeSlide) {
+                return;
+            }
+            shell.style.height = `${activeSlide.scrollHeight}px`;
+        };
+
         const measure = () => {
             const firstSlide = slides[0];
-            if (!firstSlide || !shell) {
+            if (!firstSlide) {
                 return;
             }
             slideWidth = firstSlide.getBoundingClientRect().width;
@@ -486,10 +494,7 @@
 
         const updateSlider = () => {
             measure();
-            const activeSlide = slides[currentIndex];
-            if (shell && activeSlide) {
-                shell.style.height = `${activeSlide.offsetHeight}px`;
-            }
+            setShellHeight();
             const slideFullWidth = slideWidth + gap;
             let offset = leftoverSpace / 2;
             if (currentIndex === 0) {
@@ -503,23 +508,32 @@
             nextButton.disabled = currentIndex === slides.length - 1;
         };
 
-        prevButton.addEventListener("click", () => {
-            if (currentIndex === 0) {
+        const handleNav = (direction) => {
+            const targetIndex = currentIndex + direction;
+            if (targetIndex < 0 || targetIndex > slides.length - 1) {
                 return;
             }
-            currentIndex -= 1;
+            currentIndex = targetIndex;
             updateSlider();
-        });
+        };
 
-        nextButton.addEventListener("click", () => {
-            if (currentIndex >= slides.length - 1) {
+        const refreshAfterMediaLoad = () => {
+            window.requestAnimationFrame(updateSlider);
+        };
+
+        prevButton.addEventListener("click", () => handleNav(-1));
+        nextButton.addEventListener("click", () => handleNav(1));
+
+        slider.querySelectorAll("img").forEach((img) => {
+            if (img.complete) {
                 return;
             }
-            currentIndex += 1;
-            updateSlider();
+            img.addEventListener("load", refreshAfterMediaLoad, { once: true });
+            img.addEventListener("error", refreshAfterMediaLoad, { once: true });
         });
 
         updateSlider();
+        window.addEventListener("load", refreshAfterMediaLoad);
         window.addEventListener("resize", () => {
             window.requestAnimationFrame(updateSlider);
         });
