@@ -25,22 +25,41 @@
     }
 
     .which-one-are-you .scroll-hint {
-        grid-column: 1 / -1;
         text-align: center;
+    }
+
+    .which-one-are-you .carousel-shell {
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .which-one-are-you .card-track {
+        display: flex;
+        transition: transform 0.45s ease;
+        will-change: transform;
+        column-gap: 24px;
     }
 
     .which-one-are-you .card {
         display: flex;
         flex-direction: column;
         height: 100%;
+        min-width: 95%;
+        flex: 0 0 95%;
+        max-width: 95%;
     }
 
     .which-one-are-you .card-top {
         display: flex;
         flex-direction: column;
-        gap: 12px;
-        flex: 0 0 220px;
+        gap: 8px;
+        margin-bottom: 12px;
     }
+
+    .which-one-are-you .card h2 {
+        font-size: 26px;
+        }
 
     .which-one-are-you .card-body {
         flex: 1;
@@ -50,7 +69,35 @@
     }
 
     .which-one-are-you .card-footer {
-        margin-top: 12px;
+        margin-top: 8px;
+    }
+
+    .which-one-are-you .persona-slider-nav {
+        display: flex;
+        justify-content: flex-end;
+        gap: 12px;
+    }
+
+    .which-one-are-you .persona-slider-nav button {
+        width: 44px;
+        height: 44px;
+        border-radius: 999px;
+        border: none;
+        background: #EDEDED;
+        color: #1D1D1D;
+        font-size: 20px;
+        cursor: pointer;
+        transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .which-one-are-you .persona-slider-nav button:hover:not(:disabled) {
+        background: #064DAD;
+        color: #FFFFFF;
+    }
+
+    .which-one-are-you .persona-slider-nav button:disabled {
+        opacity: 0.45;
+        cursor: not-allowed;
     }
 
     .which-one-are-you .description {
@@ -58,9 +105,9 @@
         flex-direction: column;
         gap: 8px;
         padding-left: 0;
-        margin: 0 0 20px 0;
+        margin: 0 0 4px 0;
         line-height: 1.7;
-        font-size: 14px;
+        font-size: 21px;
     }
 
     .which-one-are-you .description span {
@@ -75,324 +122,411 @@
     }
 </style>
 <div class="which-one-are-you" style="
-    display:grid;
-    grid-template-columns:repeat(4, 1fr);
-    gap:32px;
-    max-width:1200px;
+    max-width:860px;
+    width:100%;
     margin:0 auto;
-    padding:40px 0;
-    overflow-x:auto;
+    padding:40px 32px;
+    display:flex;
+    flex-direction:column;
+    gap:24px;
 ">
 
-    <!-- CARD 1 -->
-    <div class="card" style="
-        background:#064DAD;
-        color:white;
-        padding:32px;
-        border-radius:24px;
-    ">
-        <div class="card-top">
-            <h2 style="margin:0; font-size:20px; font-weight:600;">
-                YOU'RE THINKING ABOUT STARTING
-            </h2>
-
-            <p style="
-                margin-top:12px;
-                display:flex;
-                gap:12px;
-                flex-wrap:wrap;
-            ">
-                <span style="
-                    display:inline-flex;
-                    align-items:center;
-                    font-size:12px;
-                    font-weight:500;
-                    color:#FFFFFF;
-                    padding:6px 16px;
-                    border-radius:999px;
-                    background:rgba(255,255,255,0.18);
-                ">
-                    Students
-                </span>
-                <span style="
-                    display:inline-flex;
-                    align-items:center;
-                    font-size:12px;
-                    font-weight:500;
-                    color:#FFFFFF;
-                    padding:6px 16px;
-                    border-radius:999px;
-                    background:rgba(255,255,255,0.18);
-                ">
-                    Working Professionals
-                </span>
-                <span style="
-                    display:inline-flex;
-                    align-items:center;
-                    font-size:12px;
-                    font-weight:500;
-                    color:#FFFFFF;
-                    padding:6px 16px;
-                    border-radius:999px;
-                    background:rgba(255,255,255,0.18);
-                ">
-                    Side-Hustlers
-                </span>
-            </p>
-        </div>
-
-        <div class="card-body">
-            <img src="https://imgproxy.learnyst.com/learnyst-user-assets/websites/191573/images/Generated_Image_November_13__2025___3_56PM_modified_lyst1763029668135.png" style="
-                width:100%;
-                border-radius:18px;
-            " />
-
-            <div class="card-footer">
-                <h3 style="font-size:16px; margin:0 0 12px 0;">
-                    Common challenges:
-                </h3>
-
-                <div class="description">
-                    <span>Should I even start creating?</span>
-                    <span>What niche fits me?</span>
-                    <span>Will I burn out in 6 months?</span>
-                    <span>How do I not make common mistakes?</span>
-                </div>
-
-                <a href="#" class="cta-button-1">
-                    <span aria-hidden="true">→</span>
-                    Learn the foundations before you press record 
-                </a>
-            </div>
-        </div>
+    <div class="persona-slider-nav">
+        <button type="button" data-persona-nav="prev" aria-label="View previous persona">&#8592;</button>
+        <button type="button" data-persona-nav="next" aria-label="View next persona">&#8594;</button>
     </div>
 
-    <!-- CARD 2 -->
-    <div class="card" style="
-        background:#064DAD;
-        color:white;
-        padding:32px;
-        border-radius:24px;
-    ">
-        <div class="card-top">
-            <h2 style="margin:0; font-size:20px; font-weight:600;">
-                YOU HAVE JUST STARTED
-            </h2>
-
-            <p style="
-                margin-top:12px;
-                display:flex;
-                gap:12px;
-                flex-wrap:wrap;
+    <div class="carousel-shell">
+        <div class="card-track">
+            <!-- CARD 1 -->
+            <div class="card" style="
+                background:#064DAD;
+                color:white;
+                padding:24px 28px 20px 28px;
+                border-radius:24px;
             ">
-                <span style="
-                    display:inline-flex;
-                    align-items:center;
-                    font-size:12px;
-                    font-weight:500;
-                    color:#FFFFFF;
-                    padding:6px 16px;
-                    border-radius:999px;
-                    background:rgba(255,255,255,0.18);
-                ">
-                    0-6 Months In
-                </span>
-                <span style="
-                    display:inline-flex;
-                    align-items:center;
-                    font-size:12px;
-                    font-weight:500;
-                    color:#FFFFFF;
-                    padding:6px 16px;
-                    border-radius:999px;
-                    background:rgba(255,255,255,0.18);
-                ">
-                    Posting Regularly
-                </span>
-            </p>
-        </div>
+                <div class="card-top">
+            <h2 style="margin:0; font-size:24px; font-weight:600;">
+                        YOU'RE THINKING ABOUT STARTING
+                    </h2>
 
-        <div class="card-body">
-            <img src="https://imgproxy.learnyst.com/learnyst-user-assets/websites/191573/images/Gemini_Generated_Image_m8qvdpm8qvdpm8qv_modified_lyst1763030385643.png" style="
-                width:100%;
-                border-radius:18px;
-            " />
-
-            <div class="card-footer">
-                <h3 style="font-size:16px; margin:0 0 12px 0;">
-                    Common challenges:
-                </h3>
-
-                <div class="description">
-                    <span>Why aren't my videos getting views?</span>
-                    <span>Is my content strategy even right?</span>
-                    <span>How do I stay consistent without burning out?</span>
-                    <span>What platform should I focus on?</span>
+                    <p style="
+                        margin:8px 0 0 0;
+                        display:flex;
+                        gap:10px;
+                        flex-wrap:wrap;
+                    ">
+                        <span style="
+                            display:inline-flex;
+                            align-items:center;
+                            font-size:16px;
+                            font-weight:500;
+                            color:#FFFFFF;
+                            padding:6px 16px;
+                            border-radius:999px;
+                            background:rgba(255,255,255,0.18);
+                        ">
+                            Students
+                        </span>
+                        <span style="
+                            display:inline-flex;
+                            align-items:center;
+                            font-size:16px;
+                            font-weight:500;
+                            color:#FFFFFF;
+                            padding:6px 16px;
+                            border-radius:999px;
+                            background:rgba(255,255,255,0.18);
+                        ">
+                            Working Professionals
+                        </span>
+                        <span style="
+                            display:inline-flex;
+                            align-items:center;
+                            font-size:16px;
+                            font-weight:500;
+                            color:#FFFFFF;
+                            padding:6px 16px;
+                            border-radius:999px;
+                            background:rgba(255,255,255,0.18);
+                        ">
+                            Side-Hustlers
+                        </span>
+                    </p>
                 </div>
 
-                <a href="#" class="cta-button-2">
-                    <span aria-hidden="true">→</span>
-                    Fix your strategy before bad habits stick
-                </a>
+                <div class="card-body">
+                    <img src="https://imgproxy.learnyst.com/learnyst-user-assets/websites/191573/images/Generated_Image_November_13__2025___3_56PM_modified_lyst1763029668135.png" style="
+                        width:100%;
+                        border-radius:18px;
+                    " />
+
+                    <div class="card-footer">
+                        <h3 style="font-size:22px; margin:0 0 8px 0;">
+                            Common challenges:
+                        </h3>
+
+                        <div class="description">
+                            <span>Should I even start creating?</span>
+                            <span>What niche fits me?</span>
+                            <span>Will I burn out in 6 months?</span>
+                            <span>How do I not make common mistakes?</span>
+                        </div>
+
+                        <a href="#" class="cta-button-1">
+                            <span aria-hidden="true">→</span>
+                            Learn the foundations before you press record 
+                        </a>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
 
-    <!-- CARD 3 -->
-    <div class="card" style="
-        background:#1D1D1D;
-        color:white;
-        padding:32px;
-        border-radius:24px;
-    ">
-        <div class="card-top">
-            <h2 style="margin:0; font-size:20px; font-weight:600;">
-                YOU'RE BUILDING YOUR PERSONAL BRAND
-            </h2>
-
-            <p style="
-                margin-top:12px;
-                display:flex;
-                gap:12px;
-                flex-wrap:wrap;
+            <!-- CARD 2 -->
+            <div class="card" style="
+                background:#1D1D1D;
+                color:white;
+                padding:24px 28px 20px 28px;
+                border-radius:24px;
             ">
-                <span style="
-                    display:inline-flex;
-                    align-items:center;
-                    font-size:12px;
-                    font-weight:500;
-                    color:#FFFFFF;
-                    padding:6px 16px;
-                    border-radius:999px;
-                    background:rgba(255,255,255,0.18);
-                ">
-                    Entrepreneurs
-                </span>
-                <span style="
-                    display:inline-flex;
-                    align-items:center;
-                    font-size:12px;
-                    font-weight:500;
-                    color:#FFFFFF;
-                    padding:6px 16px;
-                    border-radius:999px;
-                    background:rgba(255,255,255,0.18);
-                ">
-                    Professionals
-                </span>
-            </p>
-        </div>
+                <div class="card-top">
+            <h2 style="margin:0; font-size:24px; font-weight:600;">
+                        YOU HAVE JUST STARTED
+                    </h2>
 
-        <div class="card-body">
-            <img src="https://imgproxy.learnyst.com/learnyst-user-assets/websites/191573/images/Gemini_Generated_Image_fyfx0pfyfx0pfyfx_modified_lyst1763030710596.png" style="
-                width:100%;
-                border-radius:18px;
-            " />
-
-            <div class="card-footer">
-                <h3 style="font-size:16px; margin:0 0 12px 0;">
-                    Common challenges:
-                </h3>
-
-                <div class="description">
-                    <span>How do I build authority in my niche?</span>
-                    <span>How do I turn followers into business?</span>
-                    <span>What's the legal/tax side of this?</span>
-                    <span>How do I do this alongside my day job?</span>
+                    <p style="
+                        margin:8px 0 0 0;
+                        display:flex;
+                        gap:10px;
+                        flex-wrap:wrap;
+                    ">
+                        <span style="
+                            display:inline-flex;
+                            align-items:center;
+                            font-size:16px;
+                            font-weight:500;
+                            color:#FFFFFF;
+                            padding:6px 16px;
+                            border-radius:999px;
+                            background:rgba(255,255,255,0.18);
+                        ">
+                            0-6 Months In
+                        </span>
+                        <span style="
+                            display:inline-flex;
+                            align-items:center;
+                            font-size:16px;
+                            font-weight:500;
+                            color:#FFFFFF;
+                            padding:6px 16px;
+                            border-radius:999px;
+                            background:rgba(255,255,255,0.18);
+                        ">
+                            Posting Regularly
+                        </span>
+                    </p>
                 </div>
 
-                <a href="#" class="cta-button-2">
-                    <span aria-hidden="true">→</span>
-                    Learn to build brand + business simultaneously
-                </a>
+                <div class="card-body">
+                    <img src="https://imgproxy.learnyst.com/learnyst-user-assets/websites/191573/images/Gemini_Generated_Image_m8qvdpm8qvdpm8qv_modified_lyst1763030385643.png" style="
+                        width:100%;
+                        border-radius:18px;
+                    " />
+
+                    <div class="card-footer">
+                        <h3 style="font-size:22px; margin:0 0 8px 0;">
+                            Common challenges:
+                        </h3>
+
+                        <div class="description">
+                            <span>Why aren't my videos getting views?</span>
+                            <span>Is my content strategy even right?</span>
+                            <span>How do I stay consistent without burning out?</span>
+                            <span>What platform should I focus on?</span>
+                        </div>
+
+                        <a href="#" class="cta-button-2">
+                            <span aria-hidden="true">→</span>
+                            Fix your strategy before bad habits stick
+                        </a>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
 
-    <!-- CARD 4 -->
-    <div class="card" style="
-        background:#1D1D1D;
-        color:white;
-        padding:32px;
-        border-radius:24px;
-    ">
-        <div class="card-top">
-            <h2 style="margin:0; font-size:20px; font-weight:600;">
-                YOU'RE STUCK (6+ MONTHS IN)
-            </h2>
-
-            <p style="
-                margin-top:12px;
-                display:flex;
-                gap:12px;
-                flex-wrap:wrap;
+            <!-- CARD 3 -->
+            <div class="card" style="
+                background:#064DAD;
+                color:white;
+                padding:24px 28px 20px 28px;
+                border-radius:24px;
             ">
-                <span style="
-                    display:inline-flex;
-                    align-items:center;
-                    font-size:12px;
-                    font-weight:500;
-                    color:#FFFFFF;
-                    padding:6px 16px;
-                    border-radius:999px;
-                    background:rgba(255,255,255,0.18);
-                ">
-                    Plateaued Growth
-                </span>
-                <span style="
-                    display:inline-flex;
-                    align-items:center;
-                    font-size:12px;
-                    font-weight:500;
-                    color:#FFFFFF;
-                    padding:6px 16px;
-                    border-radius:999px;
-                    background:rgba(255,255,255,0.18);
-                ">
-                    Burned Out
-                </span>
-                <span style="
-                    display:inline-flex;
-                    align-items:center;
-                    font-size:12px;
-                    font-weight:500;
-                    color:#FFFFFF;
-                    padding:6px 16px;
-                    border-radius:999px;
-                    background:rgba(255,255,255,0.18);
-                ">
-                    Lost Direction
-                </span>
-            </p>
-        </div>
+                <div class="card-top">
+            <h2 style="margin:0; font-size:24px; font-weight:600;">
+                        YOU'RE BUILDING YOUR PERSONAL BRAND
+                    </h2>
 
-        <div class="card-body">
-            <img src="https://imgproxy.learnyst.com/learnyst-user-assets/websites/191573/images/this_modified_lyst1763031220362.png" style="
-                width:100%;
-                border-radius:18px;
-            " />
-
-            <div class="card-footer">
-                <h3 style="font-size:16px; margin:0 0 12px 0;">
-                    Common challenges:
-                </h3>
-
-                <div class="description">
-                    <span>My growth has flatlined</span>
-                    <span>I'm mentally exhausted from creating</span>
-                    <span>I don't know my next move</span>
-                    <span>How do I monetize what I've built?</span>
+                    <p style="
+                        margin:8px 0 0 0;
+                        display:flex;
+                        gap:10px;
+                        flex-wrap:wrap;
+                    ">
+                        <span style="
+                            display:inline-flex;
+                            align-items:center;
+                            font-size:16px;
+                            font-weight:500;
+                            color:#FFFFFF;
+                            padding:6px 16px;
+                            border-radius:999px;
+                            background:rgba(255,255,255,0.18);
+                        ">
+                            Entrepreneurs
+                        </span>
+                        <span style="
+                            display:inline-flex;
+                            align-items:center;
+                            font-size:16px;
+                            font-weight:500;
+                            color:#FFFFFF;
+                            padding:6px 16px;
+                            border-radius:999px;
+                            background:rgba(255,255,255,0.18);
+                        ">
+                            Professionals
+                        </span>
+                    </p>
                 </div>
 
-                <a href="#" class="cta-button-1">
-                    <span aria-hidden="true">→</span>
-                    Reset your strategy + recover from burnout
-                </a>
+                <div class="card-body">
+                    <img src="https://imgproxy.learnyst.com/learnyst-user-assets/websites/191573/images/Gemini_Generated_Image_fyfx0pfyfx0pfyfx_modified_lyst1763030710596.png" style="
+                        width:100%;
+                        border-radius:18px;
+                    " />
+
+                    <div class="card-footer">
+                        <h3 style="font-size:22px; margin:0 0 8px 0;">
+                            Common challenges:
+                        </h3>
+
+                        <div class="description">
+                            <span>How do I build authority in my niche?</span>
+                            <span>How do I turn followers into business?</span>
+                            <span>What's the legal/tax side of this?</span>
+                            <span>How do I do this alongside my day job?</span>
+                        </div>
+
+                        <a href="#" class="cta-button-2">
+                            <span aria-hidden="true">→</span>
+                            Learn to build brand + business simultaneously
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CARD 4 -->
+            <div class="card" style="
+                background:#1D1D1D;
+                color:white;
+                padding:24px 28px 20px 28px;
+                border-radius:24px;
+            ">
+                <div class="card-top">
+            <h2 style="margin:0; font-size:24px; font-weight:600;">
+                        YOU'RE STUCK (6+ MONTHS IN)
+                    </h2>
+
+                    <p style="
+                        margin:8px 0 0 0;
+                        display:flex;
+                        gap:10px;
+                        flex-wrap:wrap;
+                    ">
+                        <span style="
+                            display:inline-flex;
+                            align-items:center;
+                            font-size:16px;
+                            font-weight:500;
+                            color:#FFFFFF;
+                            padding:6px 16px;
+                            border-radius:999px;
+                            background:rgba(255,255,255,0.18);
+                        ">
+                            Plateaued Growth
+                        </span>
+                        <span style="
+                            display:inline-flex;
+                            align-items:center;
+                            font-size:16px;
+                            font-weight:500;
+                            color:#FFFFFF;
+                            padding:6px 16px;
+                            border-radius:999px;
+                            background:rgba(255,255,255,0.18);
+                        ">
+                            Burned Out
+                        </span>
+                        <span style="
+                            display:inline-flex;
+                            align-items:center;
+                            font-size:16px;
+                            font-weight:500;
+                            color:#FFFFFF;
+                            padding:6px 16px;
+                            border-radius:999px;
+                            background:rgba(255,255,255,0.18);
+                        ">
+                            Lost Direction
+                        </span>
+                    </p>
+                </div>
+
+                <div class="card-body">
+                    <img src="https://imgproxy.learnyst.com/learnyst-user-assets/websites/191573/images/this_modified_lyst1763031220362.png" style="
+                        width:100%;
+                        border-radius:18px;
+                    " />
+
+                    <div class="card-footer">
+                        <h3 style="font-size:22px; margin:0 0 8px 0;">
+                            Common challenges:
+                        </h3>
+
+                        <div class="description">
+                            <span>My growth has flatlined</span>
+                            <span>I'm mentally exhausted from creating</span>
+                            <span>I don't know my next move</span>
+                            <span>How do I monetize what I've built?</span>
+                        </div>
+
+                        <a href="#" class="cta-button-1">
+                            <span aria-hidden="true">→</span>
+                            Reset your strategy + recover from burnout
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
     <p class="scroll-hint">
-        See your profile? ↓ Scroll down to explore courses built for you
+        Use the arrows to find your profile. ↓ Scroll down to explore courses built for you
     </p>
 </div>
+
+<script>
+    (function () {
+        const slider = document.querySelector(".which-one-are-you");
+        const track = slider?.querySelector(".card-track");
+        const shell = slider?.querySelector(".carousel-shell");
+        const prevButton = slider?.querySelector("[data-persona-nav=\"prev\"]");
+        const nextButton = slider?.querySelector("[data-persona-nav=\"next\"]");
+        if (!track || !prevButton || !nextButton) {
+            return;
+        }
+
+        const slides = Array.from(track.children);
+        let currentIndex = 0;
+        let slideWidth = 0;
+        let gap = 0;
+        let leftoverSpace = 0;
+        const setEqualHeights = () => {
+            let tallest = 0;
+            slides.forEach((slide) => {
+                slide.style.height = "auto";
+                tallest = Math.max(tallest, slide.getBoundingClientRect().height);
+            });
+            slides.forEach((slide) => {
+                slide.style.height = `${tallest}px`;
+            });
+        };
+
+        const measure = () => {
+            const firstSlide = slides[0];
+            if (!firstSlide || !shell) {
+                return;
+            }
+            slideWidth = firstSlide.getBoundingClientRect().width;
+            const computed = window.getComputedStyle(track);
+            const parsedGap = parseFloat(computed.columnGap || computed.gap || "0");
+            gap = Number.isNaN(parsedGap) ? 0 : parsedGap;
+            leftoverSpace = Math.max(shell.clientWidth - slideWidth, 0);
+        };
+
+        const updateSlider = () => {
+            setEqualHeights();
+            measure();
+            const slideFullWidth = slideWidth + gap;
+            let offset = leftoverSpace / 2;
+            if (currentIndex === 0) {
+                offset = 0;
+            } else if (currentIndex === slides.length - 1) {
+                offset = leftoverSpace;
+            }
+            const translateValue = -(currentIndex * slideFullWidth) + offset;
+            track.style.transform = `translateX(${translateValue}px)`;
+            prevButton.disabled = currentIndex === 0;
+            nextButton.disabled = currentIndex === slides.length - 1;
+        };
+
+        prevButton.addEventListener("click", () => {
+            if (currentIndex === 0) {
+                return;
+            }
+            currentIndex -= 1;
+            updateSlider();
+        });
+
+        nextButton.addEventListener("click", () => {
+            if (currentIndex >= slides.length - 1) {
+                return;
+            }
+            currentIndex += 1;
+            updateSlider();
+        });
+
+        updateSlider();
+        window.addEventListener("resize", () => {
+            window.requestAnimationFrame(updateSlider);
+        });
+    })();
+</script>
