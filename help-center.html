@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FAQ</title>
+    <style>
+        body {
+            margin: 0;
+            background: #F3F6FB;
+            font-family: "Poppins", "Raleway", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        }
+
+        h1 {
+            margin: 0 0 16px;
+            font-size: 36px;
+            line-height: 1.2;
+            font-weight: 600;
+            color: #0047AB;
+        }
+
+        .page-intro {
+            width: 100%;
+            max-width: 960px;
+            margin: 60px auto 48px;
+            padding: 0 24px;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        .page-intro p {
+            margin: 0;
+            font-size: 17px;
+            line-height: 1.6;
+            color: rgba(29, 29, 29, 0.85);
+        }
+
+        .faq-section {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 24px 40px;
+        }
+
+        .faq-cta-wrapper {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            margin: 72px auto 96px;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+
+        .faq-cta {
+            width: 100%;
+            max-width: 520px;
+            border-radius: 28px;
+            background: #FFFFFF;
+            box-shadow: 0 24px 40px rgba(0, 0, 0, 0.08);
+            padding: 32px 36px;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            text-align: center;
+        }
+
+        .faq-cta h3 {
+            margin: 0 0 10px;
+            font-size: 22px;
+            font-weight: 600;
+            color: #1D1D1D;
+        }
+
+        .faq-cta p {
+            margin: 0;
+            font-size: 16px;
+            color: rgba(29, 29, 29, 0.72);
+        }
+
+        .faq-cta-footer {
+            margin-top: 28px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .faq-cta-avatars {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .faq-cta-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            border: 3px solid #FFFFFF;
+            object-fit: cover;
+            margin-left: -14px;
+        }
+
+        .faq-cta-avatar:first-child {
+            margin-left: 0;
+        }
+
+        .cta-button,
+        .cta-button:link,
+        .cta-button:visited {
+            border: none;
+            border-radius: 30px;
+            padding: 14px 28px;
+            font-size: 16px;
+            font-weight: 500;
+            color: #FFFFFF;
+            background: #1053AF;
+            cursor: pointer;
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.16);
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            opacity: 0.9;
+        }
+
+        .faq-column {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .faq-card {
+            border: 2px solid #FFFFFF;
+            border-radius: 28px;
+            padding: 28px 36px 32px 36px;
+            background: transparent;
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08), 0 6px 18px rgba(0, 71, 171, 0.08);
+            transition: box-shadow 180ms ease, border-color 180ms ease, background-color 180ms ease;
+        }
+
+        .faq-card:hover {
+            background: rgba(255, 255, 255, 0.04);
+            border-color: rgba(255, 255, 255, 0.72);
+            box-shadow: 0 24px 44px rgba(0, 0, 0, 0.12), 0 10px 26px rgba(0, 71, 171, 0.14);
+        }
+
+        .faq-toggle {
+            display: flex;
+            width: 100%;
+            align-items: center;
+            justify-content: space-between;
+            gap: 32px;
+            cursor: pointer;
+            padding: 0;
+            background: transparent;
+            border: none;
+            text-align: left;
+        }
+
+        .faq-question {
+            font-size: 18px;
+            font-weight: 400;
+            letter-spacing: 0.01em;
+            color: #1D1D1D;
+        }
+
+        .faq-icon {
+            width: 20px;
+            height: 20px;
+            position: relative;
+        }
+
+        .faq-icon::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            margin: auto;
+            width: 0;
+            height: 0;
+            border-left: 7px solid transparent;
+            border-right: 7px solid transparent;
+            border-top: 9px solid #1D1D1D;
+            transition: transform 160ms ease;
+        }
+
+        .faq-card[data-open="true"] .faq-icon::before {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer-wrapper {
+            overflow: hidden;
+            max-height: 0;
+            opacity: 0;
+            transition: max-height 220ms ease, opacity 180ms ease;
+        }
+
+        .faq-card[data-open="true"] .faq-answer-wrapper {
+            max-height: 400px;
+            opacity: 1;
+            margin-top: 18px;
+        }
+
+        .faq-answer {
+            display: block;
+            margin: 0;
+            font-size: 15px;
+            line-height: 1.7;
+            color: rgba(29, 29, 29, 0.82);
+            font-weight: 400;
+        }
+
+        @media (max-width: 900px) {
+            .faq-section {
+                grid-template-columns: 1fr;
+            }
+
+            .faq-cta-wrapper {
+                margin: 60px auto;
+            }
+        }
+
+        @media (max-width: 599px) {
+            body {
+                padding: 48px 20px 72px;
+            }
+
+            .faq-card {
+                padding: 20px 24px;
+            }
+
+            .faq-question {
+                font-size: 16px;
+            }
+
+            .faq-cta {
+                padding: 28px;
+            }
+
+            .faq-cta-footer {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="page-intro">
+        <h1>Crescere Academy &mdash; Help Center</h1>
+        <p>Browse the FAQs below for quick answers, or reach out to our support team anytime you need personal help.</p>
+    </header>
+    <section class="faq-section">
+        <div class="faq-column">
+            <div class="faq-card" data-open="false">
+                <button class="faq-toggle" aria-expanded="false">
+                    <span class="faq-question">Who is this course for?</span>
+                    <span class="faq-icon" aria-hidden="true"></span>
+                </button>
+                <div class="faq-answer-wrapper">
+                    <span class="faq-answer">
+                        This academy is for anyone who wants to build a creator career - aspiring creators just starting out, established creators wanting to scale, and personal brand entrepreneurs. No prior experience needed.
+                    </span>
+                </div>
+            </div>
+            <div class="faq-card" data-open="false">
+                <button class="faq-toggle" aria-expanded="false">
+                    <span class="faq-question">Do I need prior experience or special skills?</span>
+                    <span class="faq-icon" aria-hidden="true"></span>
+                </button>
+                <div class="faq-answer-wrapper">
+                    <span class="faq-answer">
+                        No. We start from the basics and build up. Whether you're a complete beginner or have some experience, the courses are designed to meet you where you are.
+                    </span>
+                </div>
+            </div>
+            <div class="faq-card" data-open="false">
+                <button class="faq-toggle" aria-expanded="false">
+                    <span class="faq-question">How do I get access to the courses?</span>
+                    <span class="faq-icon" aria-hidden="true"></span>
+                </button>
+                <div class="faq-answer-wrapper">
+                    <span class="faq-answer">
+                        Join the waitlist to be notified when courses launch. Once available, you can enroll and get instant access to all course materials.
+                    </span>
+                </div>
+            </div>
+            <div class="faq-card" data-open="false">
+                <button class="faq-toggle" aria-expanded="false">
+                    <span class="faq-question">Can I access the courses after I purchase them?</span>
+                    <span class="faq-icon" aria-hidden="true"></span>
+                </button>
+                <div class="faq-answer-wrapper">
+                    <span class="faq-answer">
+                        Yes. You get lifetime access to all courses you enroll in, including any future updates or additions to the material.
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="faq-column">
+            <div class="faq-card" data-open="false">
+                <button class="faq-toggle" aria-expanded="false">
+                    <span class="faq-question">When do the courses launch?</span>
+                    <span class="faq-icon" aria-hidden="true"></span>
+                </button>
+                <div class="faq-answer-wrapper">
+                    <span class="faq-answer">
+                        Courses are launching in phases. Course 9 (Creator Psychology) is live now. Other courses are launching soon. Join the waitlist to get early access.
+                    </span>
+                </div>
+            </div>
+            <div class="faq-card" data-open="false">
+                <button class="faq-toggle" aria-expanded="false">
+                    <span class="faq-question">Is there community support or mentoring?</span>
+                    <span class="faq-icon" aria-hidden="true"></span>
+                </button>
+                <div class="faq-answer-wrapper">
+                    <span class="faq-answer">
+                        Yes. Submit your queries through the queries section on the course platform and our course experts will respond. You can also reach out via email at contact@engaugelearning.com for support.
+                    </span>
+                </div>
+            </div>
+            <div class="faq-card" data-open="false">
+                <button class="faq-toggle" aria-expanded="false">
+                    <span class="faq-question">What if I do not find the course helpful?</span>
+                    <span class="faq-icon" aria-hidden="true"></span>
+                </button>
+                <div class="faq-answer-wrapper">
+                    <span class="faq-answer">
+                        We do not offer refunds once purchased. Please refer to our refund policy for complete details.
+                    </span>
+                </div>
+            </div>
+            <div class="faq-card" data-open="false">
+                <button class="faq-toggle" aria-expanded="false">
+                    <span class="faq-question">Can I download course materials or access offline?</span>
+                    <span class="faq-icon" aria-hidden="true"></span>
+                </button>
+                <div class="faq-answer-wrapper">
+                    <span class="faq-answer">
+                        Course materials like templates, worksheets, and projects can be downloaded for offline use. However, video courses can only be accessed online through the platform.
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="faq-cta-wrapper">
+        <div class="faq-cta">
+            <h3>Still Have Questions?</h3>
+            <p>Contact us, we are happy to help you</p>
+            <div class="faq-cta-footer">
+                <div class="faq-cta-avatars">
+                    <img class="faq-cta-avatar"
+                        src="https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=facearea&w=150&h=150&q=80"
+                        alt="Student support team member" loading="lazy" />
+                    <img class="faq-cta-avatar"
+                        src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?auto=format&fit=facearea&w=150&h=150&q=80"
+                        alt="Student support team member" loading="lazy" />
+                    <img class="faq-cta-avatar"
+                        src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=facearea&w=150&h=150&q=80"
+                        alt="Student support team member" loading="lazy" />
+                </div>
+                <a class="cta-button" href="/contact-us">Contact Us</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const faqCards = document.querySelectorAll('.faq-card');
+
+        const toggleCard = (card, shouldOpen) => {
+            card.setAttribute('data-open', String(shouldOpen));
+            const toggle = card.querySelector('.faq-toggle');
+            if (toggle) {
+                toggle.setAttribute('aria-expanded', String(shouldOpen));
+            }
+        };
+
+        document.querySelectorAll('.faq-toggle').forEach((button) => {
+            button.addEventListener('click', (event) => {
+                event.preventDefault();
+                const card = button.closest('.faq-card');
+                const isOpen = card.getAttribute('data-open') === 'true';
+
+                faqCards.forEach((faqCard) => {
+                    if (faqCard !== card) {
+                        toggleCard(faqCard, false);
+                    }
+                });
+
+                toggleCard(card, !isOpen);
+            });
+        });
+    </script>
+</body>
+
+</html>
