@@ -8,13 +8,13 @@
     <style>
         body {
             margin: 0;
-            background: linear-gradient(180deg, #F7F9FC 0%, #F3F6FB 60%, #EDEDED 100%);
+            background: #FFFFFF;
         }
 
         .engauge-help-center {
             width: 100%;
             min-height: 100vh;
-            background: linear-gradient(180deg, #F7F9FC 0%, #F3F6FB 60%, #EDEDED 100%);
+            background: #FFFFFF;
             font-family: "Poppins", "Raleway", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
             color: #1D1D1D;
         }
@@ -64,11 +64,6 @@
             display: flex;
             flex-direction: column;
             gap: 24px;
-        }
-
-        .engauge-help-center .faq-group.common-queries .faq-card {
-            min-height: 100px;
-            padding: 24px 32px 24px 36px;
         }
 
         .engauge-help-center .faq-group-title {
@@ -182,12 +177,13 @@
             position: relative;
             border: 1px solid rgba(0, 71, 171, 0.1);
             border-radius: 28px;
-            padding: 28px 36px 32px 36px;
+            padding: 24px 32px 24px 36px;
             background: #FFFFFF;
             box-shadow: 0 18px 44px rgba(0, 0, 0, 0.08);
             transition: box-shadow 180ms ease, border-color 180ms ease, background-color 180ms ease, transform 180ms ease;
             display: flex;
             flex-direction: column;
+            min-height: 100px;
         }
 
         .engauge-help-center .faq-card:hover {
