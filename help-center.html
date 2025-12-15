@@ -40,9 +40,36 @@
             width: 100%;
             max-width: 1200px;
             margin: 0 auto;
+            padding: 0 24px 40px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            gap: 64px;
+        }
+
+        .faq-group {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .faq-group-title {
+            margin: 0;
+            font-size: 24px;
+            font-weight: 600;
+            color: #0047AB;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+        }
+
+        .faq-columns {
             display: grid;
             grid-template-columns: repeat(2, minmax(0, 1fr));
             gap: 24px 40px;
+        }
+
+        .faq-columns.single-column {
+            grid-template-columns: minmax(0, 1fr);
         }
 
         .faq-cta-wrapper {
@@ -198,7 +225,7 @@
         }
 
         .faq-card[data-open="true"] .faq-answer-wrapper {
-            max-height: 400px;
+            max-height: 600px;
             opacity: 1;
             margin-top: 18px;
         }
@@ -213,7 +240,7 @@
         }
 
         @media (max-width: 900px) {
-            .faq-section {
+            .faq-columns {
                 grid-template-columns: 1fr;
             }
 
@@ -252,105 +279,642 @@
         <h1>Crescere Academy &mdash; Help Center</h1>
         <p>Browse the FAQs below for quick answers, or reach out to our support team anytime you need personal help.</p>
     </header>
+
     <section class="faq-section">
-        <div class="faq-column">
-            <div class="faq-card" data-open="false">
-                <button class="faq-toggle" aria-expanded="false">
-                    <span class="faq-question">Who is this course for?</span>
-                    <span class="faq-icon" aria-hidden="true"></span>
-                </button>
-                <div class="faq-answer-wrapper">
-                    <span class="faq-answer">
-                        This academy is for anyone who wants to build a creator career - aspiring creators just starting out, established creators wanting to scale, and personal brand entrepreneurs. No prior experience needed.
-                    </span>
+        <div class="faq-group">
+            <h2 class="faq-group-title">Common Queries</h2>
+            <div class="faq-columns">
+                <div class="faq-column">
+                    <div class="faq-card" data-open="false">
+                        <button class="faq-toggle" aria-expanded="false">
+                            <span class="faq-question">Q1) Is the course in English or Hinglish?</span>
+                            <span class="faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-answer-wrapper">
+                            <span class="faq-answer">
+                                Both versions are available. You can choose whichever you prefer. If you cannot access the correct version, you can submit a request through our Support Form and it will be resolved.
+                            </span>
+                        </div>
+                    </div>
+                    <div class="faq-card" data-open="false">
+                        <button class="faq-toggle" aria-expanded="false">
+                            <span class="faq-question">Q2) Will I get recordings or study material?</span>
+                            <span class="faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-answer-wrapper">
+                            <span class="faq-answer">
+                                Yes, the full course is recorded with lifetime access. Worksheets or notes are added where useful. If any file does not load, please share the details through the Support Form so it can be fixed.
+                            </span>
+                        </div>
+                    </div>
+                    <div class="faq-card" data-open="false">
+                        <button class="faq-toggle" aria-expanded="false">
+                            <span class="faq-question">Q3) Will I get a certificate?</span>
+                            <span class="faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-answer-wrapper">
+                            <span class="faq-answer">
+                                Yes, your certificate will appear on your dashboard once you complete the course. If it does not show up, you can raise a request through the Support Form and it will be issued.
+                            </span>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="faq-card" data-open="false">
-                <button class="faq-toggle" aria-expanded="false">
-                    <span class="faq-question">Do I need prior experience or special skills?</span>
-                    <span class="faq-icon" aria-hidden="true"></span>
-                </button>
-                <div class="faq-answer-wrapper">
-                    <span class="faq-answer">
-                        No. We start from the basics and build up. Whether you're a complete beginner or have some experience, the courses are designed to meet you where you are.
-                    </span>
-                </div>
-            </div>
-            <div class="faq-card" data-open="false">
-                <button class="faq-toggle" aria-expanded="false">
-                    <span class="faq-question">How do I get access to the courses?</span>
-                    <span class="faq-icon" aria-hidden="true"></span>
-                </button>
-                <div class="faq-answer-wrapper">
-                    <span class="faq-answer">
-                        Join the waitlist to be notified when courses launch. Once available, you can enroll and get instant access to all course materials.
-                    </span>
-                </div>
-            </div>
-            <div class="faq-card" data-open="false">
-                <button class="faq-toggle" aria-expanded="false">
-                    <span class="faq-question">Can I access the courses after I purchase them?</span>
-                    <span class="faq-icon" aria-hidden="true"></span>
-                </button>
-                <div class="faq-answer-wrapper">
-                    <span class="faq-answer">
-                        Yes. You get lifetime access to all courses you enroll in, including any future updates or additions to the material.
-                    </span>
-                </div>
-            </div>
-        </div>
-        <div class="faq-column">
-            <div class="faq-card" data-open="false">
-                <button class="faq-toggle" aria-expanded="false">
-                    <span class="faq-question">When do the courses launch?</span>
-                    <span class="faq-icon" aria-hidden="true"></span>
-                </button>
-                <div class="faq-answer-wrapper">
-                    <span class="faq-answer">
-                        Courses are launching in phases. Course 9 (Creator Psychology) is live now. Other courses are launching soon. Join the waitlist to get early access.
-                    </span>
-                </div>
-            </div>
-            <div class="faq-card" data-open="false">
-                <button class="faq-toggle" aria-expanded="false">
-                    <span class="faq-question">Is there community support or mentoring?</span>
-                    <span class="faq-icon" aria-hidden="true"></span>
-                </button>
-                <div class="faq-answer-wrapper">
-                    <span class="faq-answer">
-                        Yes. Submit your queries through the queries section on the course platform and our course experts will respond. You can also reach out via email at contact@engaugelearning.com for support.
-                    </span>
-                </div>
-            </div>
-            <div class="faq-card" data-open="false">
-                <button class="faq-toggle" aria-expanded="false">
-                    <span class="faq-question">What if I do not find the course helpful?</span>
-                    <span class="faq-icon" aria-hidden="true"></span>
-                </button>
-                <div class="faq-answer-wrapper">
-                    <span class="faq-answer">
-                        We do not offer refunds once purchased. Please refer to our refund policy for complete details.
-                    </span>
-                </div>
-            </div>
-            <div class="faq-card" data-open="false">
-                <button class="faq-toggle" aria-expanded="false">
-                    <span class="faq-question">Can I download course materials or access offline?</span>
-                    <span class="faq-icon" aria-hidden="true"></span>
-                </button>
-                <div class="faq-answer-wrapper">
-                    <span class="faq-answer">
-                        Course materials like templates, worksheets, and projects can be downloaded for offline use. However, video courses can only be accessed online through the platform.
-                    </span>
+                <div class="faq-column">
+                    <div class="faq-card" data-open="false">
+                        <button class="faq-toggle" aria-expanded="false">
+                            <span class="faq-question">Q4) How long do I get access?</span>
+                            <span class="faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-answer-wrapper">
+                            <span class="faq-answer">
+                                You receive lifetime access. If you face any access issues, you can contact us through the Support Form and it will be resolved.
+                            </span>
+                        </div>
+                    </div>
+                    <div class="faq-card" data-open="false">
+                        <button class="faq-toggle" aria-expanded="false">
+                            <span class="faq-question">Q5) Payment deducted but the course is not unlocked. What should I do?</span>
+                            <span class="faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-answer-wrapper">
+                            <span class="faq-answer">
+                                Please wait a few minutes for it to update. If the course still does not unlock, share your transaction ID on the Support Form and your access will be activated.
+                            </span>
+                        </div>
+                    </div>
+                    <div class="faq-card" data-open="false">
+                        <button class="faq-toggle" aria-expanded="false">
+                            <span class="faq-question">Q6) How many devices can I log in from?</span>
+                            <span class="faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-answer-wrapper">
+                            <span class="faq-answer">
+                                You can use the course on up to 2 devices. If you change your device and need a reset, you can request it through the Support Form.
+                            </span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+
+        <div class="faq-group">
+            <h2 class="faq-group-title">Account And Login Help</h2>
+            <div class="faq-columns">
+                <div class="faq-column">
+                    <div class="faq-card" data-open="false">
+                        <button class="faq-toggle" aria-expanded="false">
+                            <span class="faq-question">Q1) I cannot log in. What should I do?</span>
+                            <span class="faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-answer-wrapper">
+                            <span class="faq-answer">
+                                First check if you are using the same email you used during purchase. If the issue continues, share your registered email through the Support Form and it will be fixed.
+                            </span>
+                        </div>
+                    </div>
+                    <div class="faq-card" data-open="false">
+                        <button class="faq-toggle" aria-expanded="false">
+                            <span class="faq-question">Q2) I forgot my password. How do I reset it?</span>
+                            <span class="faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-answer-wrapper">
+                            <span class="faq-answer">
+                                Use the "Forgot Password" option on the login page. If the reset link does not arrive, submit your email on the Support Form and we will help you regain access.
+                            </span>
+                        </div>
+                    </div>
+                    <div class="faq-card" data-open="false">
+                        <button class="faq-toggle" aria-expanded="false">
+                            <span class="faq-question">Q3) I entered the wrong email during signup or payment. Can it be corrected?</span>
+                            <span class="faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-answer-wrapper">
+                            <span class="faq-answer">
+                                Yes. Share the wrong email and the correct email through the Support Form and it will be updated.
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-column">
+                    <div class="faq-card" data-open="false">
+                        <button class="faq-toggle" aria-expanded="false">
+                            <span class="faq-question">Q4) I am getting logged out automatically. Why does this happen?</span>
+                            <span class="faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-answer-wrapper">
+                            <span class="faq-answer">
+                                This can happen if the system detects a new device or inactive session. Just log in again. If it keeps happening, report it through the Support Form.
+                            </span>
+                        </div>
+                    </div>
+                    <div class="faq-card" data-open="false">
+                        <button class="faq-toggle" aria-expanded="false">
+                            <span class="faq-question">Q5) My course is not showing even after I log in.</span>
+                            <span class="faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-answer-wrapper">
+                            <span class="faq-answer">
+                                Share your registered email on the Support Form and your course access will be checked and restored.
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-group">
+            <h2 class="faq-group-title">Payments And Billing</h2>
+            <div class="faq-columns">
+                <div class="faq-column">
+                    <div class="faq-card" data-open="false">
+                        <button class="faq-toggle" aria-expanded="false">
+                            <span class="faq-question">Q1) Payment went through but the course is not unlocked.</span>
+                            <span class="faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-answer-wrapper">
+                            <span class="faq-answer">
+                                Don't worry. Please share your transaction ID with us on our support contact form and we will unlock it manually.
+                            </span>
+                        </div>
+                    </div>
+                    <div class="faq-card" data-open="false">
+                        <button class="faq-toggle" aria-expanded="false">
+                            <span class="faq-question">Q2) Payment failed but money was deducted.</span>
+                            <span class="faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-answer-wrapper">
+                            <span class="faq-answer">
+                                In case of a technical issue, the transaction will be reversed in a few hours. Send us your transaction ID for verification, and post verification, the amount will be refunded if not already.
+                            </span>
+                        </div>
+                    </div>
+                    <div class="faq-card" data-open="false">
+                        <button class="faq-toggle" aria-expanded="false">
+                            <span class="faq-question">Q3) Do you provide GST invoices?</span>
+                            <span class="faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-answer-wrapper">
+                            <span class="faq-answer">
+                                Yes, you will receive a GST invoice after the purchase. Business users can add GST details during checkout.
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-column">
+                    <div class="faq-card" data-open="false">
+                        <button class="faq-toggle" aria-expanded="false">
+                            <span class="faq-question">Q4) I entered the wrong email during payment.</span>
+                            <span class="faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-answer-wrapper">
+                            <span class="faq-answer">
+                                You can update your email ID in the profile section. Alternatively, you can also reach out to us on our support contacts, or share the correct email ID on our Support Form.
+                            </span>
+                        </div>
+                    </div>
+                    <div class="faq-card" data-open="false">
+                        <button class="faq-toggle" aria-expanded="false">
+                            <span class="faq-question">Q5) Are there refunds?</span>
+                            <span class="faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-answer-wrapper">
+                            <span class="faq-answer">
+                                No, all course purchases are a single non-refundable purchase with lifetime access to the course. Please refer to our refunds policy for the same.
+                            </span>
+                        </div>
+                    </div>
+                    <div class="faq-card" data-open="false">
+                        <button class="faq-toggle" aria-expanded="false">
+                            <span class="faq-question">Q6) What payment methods do you accept?</span>
+                            <span class="faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-answer-wrapper">
+                            <span class="faq-answer">
+                                All major payment methods like UPI, Debit/Credit Cards, Net Banking, and more are available via Razorpay.
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-group">
+            <h2 class="faq-group-title">Course Content And Access</h2>
+            <div class="faq-columns">
+                <div class="faq-column">
+                    <div class="faq-card" data-open="false">
+                        <button class="faq-toggle" aria-expanded="false">
+                            <span class="faq-question">Q1) Will I get recordings or study material?</span>
+                            <span class="faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-answer-wrapper">
+                            <span class="faq-answer">
+                                Yes, the entire course is recorded and comes with lifetime access. Notes or worksheets are added where needed. If anything does not open, you can report it through the Support Form.
+                            </span>
+                        </div>
+                    </div>
+                    <div class="faq-card" data-open="false">
+                        <button class="faq-toggle" aria-expanded="false">
+                            <span class="faq-question">Q2) Is the course downloadable?</span>
+                            <span class="faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-answer-wrapper">
+                            <span class="faq-answer">
+                                No, the videos cannot be downloaded, but you can watch them anytime on your dashboard. If you face playback issues, share the details on the Support Form.
+                            </span>
+                        </div>
+                    </div>
+                    <div class="faq-card" data-open="false">
+                        <button class="faq-toggle" aria-expanded="false">
+                            <span class="faq-question">Q3) Is the course available in English and Hinglish?</span>
+                            <span class="faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-answer-wrapper">
+                            <span class="faq-answer">
+                                Yes, both versions are available. If you are unable to switch between them, submit a request on the Support Form and it will be corrected.
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-column">
+                    <div class="faq-card" data-open="false">
+                        <button class="faq-toggle" aria-expanded="false">
+                            <span class="faq-question">Q4) How long do I have access to the course?</span>
+                            <span class="faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-answer-wrapper">
+                            <span class="faq-answer">
+                                You have lifetime access. If you lose access for any reason, you can contact us through the Support Form.
+                            </span>
+                        </div>
+                    </div>
+                    <div class="faq-card" data-open="false">
+                        <button class="faq-toggle" aria-expanded="false">
+                            <span class="faq-question">Q5) Can I watch the course on both my phone and laptop?</span>
+                            <span class="faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-answer-wrapper">
+                            <span class="faq-answer">
+                                Yes, you can use up to 2 devices. If you change your device later and need a reset, you can request it through the Support Form.
+                            </span>
+                        </div>
+                    </div>
+                    <div class="faq-card" data-open="false">
+                        <button class="faq-toggle" aria-expanded="false">
+                            <span class="faq-question">Q6) Do I need to complete the course within a fixed time?</span>
+                            <span class="faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-answer-wrapper">
+                            <span class="faq-answer">
+                                No, you can learn at your own pace. If you need help understanding how to navigate the modules, feel free to reach out through the Support Form.
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-group">
+            <h2 class="faq-group-title">Video, Audio And Tech Issues</h2>
+            <div class="faq-columns">
+                <div class="faq-column">
+                    <div class="faq-card" data-open="false">
+                        <button class="faq-toggle" aria-expanded="false">
+                            <span class="faq-question">Q1) The video is not playing. What should I do?</span>
+                            <span class="faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-answer-wrapper">
+                            <span class="faq-answer">
+                                Refresh the page once. If it still does not play, share the module name and video title through the Support Form and it will be checked.
+                            </span>
+                        </div>
+                    </div>
+                    <div class="faq-card" data-open="false">
+                        <button class="faq-toggle" aria-expanded="false">
+                            <span class="faq-question">Q2) The video keeps buffering.</span>
+                            <span class="faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-answer-wrapper">
+                            <span class="faq-answer">
+                                This may happen due to internet speed. If it continues even on a stable connection, submit the module name and video title on the Support Form.
+                            </span>
+                        </div>
+                    </div>
+                    <div class="faq-card" data-open="false">
+                        <button class="faq-toggle" aria-expanded="false">
+                            <span class="faq-question">Q3) The audio is unclear or too low.</span>
+                            <span class="faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-answer-wrapper">
+                            <span class="faq-answer">
+                                Share the specific video name on the Support Form so the issue can be reviewed and fixed.
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-column">
+                    <div class="faq-card" data-open="false">
+                        <button class="faq-toggle" aria-expanded="false">
+                            <span class="faq-question">Q4) Subtitles are missing or incorrect.</span>
+                            <span class="faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-answer-wrapper">
+                            <span class="faq-answer">
+                                Tell us the module and video title through the Support Form and updated subtitles will be added.
+                            </span>
+                        </div>
+                    </div>
+                    <div class="faq-card" data-open="false">
+                        <button class="faq-toggle" aria-expanded="false">
+                            <span class="faq-question">Q5) I am seeing the wrong language version.</span>
+                            <span class="faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-answer-wrapper">
+                            <span class="faq-answer">
+                                Try switching between English and Hindi in the player. If it still shows the wrong version, report it through the Support Form.
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-group">
+            <h2 class="faq-group-title">Certificate Help</h2>
+            <div class="faq-columns">
+                <div class="faq-column">
+                    <div class="faq-card" data-open="false">
+                        <button class="faq-toggle" aria-expanded="false">
+                            <span class="faq-question">Q1) When will I get my certificate?</span>
+                            <span class="faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-answer-wrapper">
+                            <span class="faq-answer">
+                                Your certificate becomes available on your dashboard as soon as you complete the course. If you don't see it, you can raise a request through the Support Form.
+                            </span>
+                        </div>
+                    </div>
+                    <div class="faq-card" data-open="false">
+                        <button class="faq-toggle" aria-expanded="false">
+                            <span class="faq-question">Q2) My name is incorrect on the certificate. Can it be updated?</span>
+                            <span class="faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-answer-wrapper">
+                            <span class="faq-answer">
+                                Yes, it can be corrected. Please share the correct spelling through the Support Form and a revised certificate will be issued.
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-column">
+                    <div class="faq-card" data-open="false">
+                        <button class="faq-toggle" aria-expanded="false">
+                            <span class="faq-question">Q3) I finished the course but the certificate is not showing.</span>
+                            <span class="faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-answer-wrapper">
+                            <span class="faq-answer">
+                                Sometimes it takes a moment to reflect. If it still does not appear, let us know through the Support Form and it will be fixed.
+                            </span>
+                        </div>
+                    </div>
+                    <div class="faq-card" data-open="false">
+                        <button class="faq-toggle" aria-expanded="false">
+                            <span class="faq-question">Q4) How do I download my certificate again?</span>
+                            <span class="faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-answer-wrapper">
+                            <span class="faq-answer">
+                                You can download it anytime from your course dashboard. If you face any difficulty, feel free to reach out via the Support Form.
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-group">
+            <h2 class="faq-group-title">Device Limit And Security</h2>
+            <div class="faq-columns">
+                <div class="faq-column">
+                    <div class="faq-card" data-open="false">
+                        <button class="faq-toggle" aria-expanded="false">
+                            <span class="faq-question">Q1) How many devices can I use to access the course?</span>
+                            <span class="faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-answer-wrapper">
+                            <span class="faq-answer">
+                                You can use the course on up to 2 devices. This helps keep your account secure.
+                            </span>
+                        </div>
+                    </div>
+                    <div class="faq-card" data-open="false">
+                        <button class="faq-toggle" aria-expanded="false">
+                            <span class="faq-question">Q2) I changed my phone or laptop and now I am unable to log in.</span>
+                            <span class="faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-answer-wrapper">
+                            <span class="faq-answer">
+                                You can request a device reset through the Support Form and access will be restored.
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-column">
+                    <div class="faq-card" data-open="false">
+                        <button class="faq-toggle" aria-expanded="false">
+                            <span class="faq-question">Q3) I logged in on a shared or office device by mistake. What should I do?</span>
+                            <span class="faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-answer-wrapper">
+                            <span class="faq-answer">
+                                You can raise a reset request through the Support Form and the extra device will be cleared.
+                            </span>
+                        </div>
+                    </div>
+                    <div class="faq-card" data-open="false">
+                        <button class="faq-toggle" aria-expanded="false">
+                            <span class="faq-question">Q4) How do I request a device reset?</span>
+                            <span class="faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-answer-wrapper">
+                            <span class="faq-answer">
+                                Simply choose "Device Limit Reset" on the Support Form, share your registered email, and we will help you with the reset.
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-group">
+            <h2 class="faq-group-title">Internship, Jobs And Opportunities</h2>
+            <div class="faq-columns">
+                <div class="faq-column">
+                    <div class="faq-card" data-open="false">
+                        <button class="faq-toggle" aria-expanded="false">
+                            <span class="faq-question">Q1) Do you provide internships after completing the course?</span>
+                            <span class="faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-answer-wrapper">
+                            <span class="faq-answer">
+                                Internships are not guaranteed. When our partner brands or partner agencies have open roles, we connect suitable learners with them. You can share your interest through the Support Form.
+                            </span>
+                        </div>
+                    </div>
+                    <div class="faq-card" data-open="false">
+                        <button class="faq-toggle" aria-expanded="false">
+                            <span class="faq-question">Q2) Do you help creators get brand deals?</span>
+                            <span class="faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-answer-wrapper">
+                            <span class="faq-answer">
+                                Brand deals are not guaranteed, but many of our courses are taught by industry professionals, and partner brands often share live briefs or opportunities. Wherever there is a good fit, we share these with learners based on their profiles.
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-column">
+                    <div class="faq-card" data-open="false">
+                        <button class="faq-toggle" aria-expanded="false">
+                            <span class="faq-question">Q3) Can I apply to work with Engauge Learning?</span>
+                            <span class="faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-answer-wrapper">
+                            <span class="faq-answer">
+                                Yes, you can apply through the Support Form under the "Internship or Job" option. If something relevant opens up, we will get in touch.
+                            </span>
+                        </div>
+                    </div>
+                    <div class="faq-card" data-open="false">
+                        <button class="faq-toggle" aria-expanded="false">
+                            <span class="faq-question">Q4) Do you place creators with agencies or brands?</span>
+                            <span class="faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-answer-wrapper">
+                            <span class="faq-answer">
+                                We work with multiple partner brands and agencies. When they have requirements that match a learner's niche or skills, we share those opportunities.
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-group">
+            <h2 class="faq-group-title">Before You Buy (Pre Purchase Questions)</h2>
+            <div class="faq-columns">
+                <div class="faq-column">
+                    <div class="faq-card" data-open="false">
+                        <button class="faq-toggle" aria-expanded="false">
+                            <span class="faq-question">Q1) Is this course live or recorded?</span>
+                            <span class="faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-answer-wrapper">
+                            <span class="faq-answer">
+                                The course is fully recorded and you can learn at your own pace. Whenever live activities or briefs are part of a program, they will be mentioned clearly.
+                            </span>
+                        </div>
+                    </div>
+                    <div class="faq-card" data-open="false">
+                        <button class="faq-toggle" aria-expanded="false">
+                            <span class="faq-question">Q2) Is this course suitable for beginners?</span>
+                            <span class="faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-answer-wrapper">
+                            <span class="faq-answer">
+                                Yes, the course is designed to help beginners understand the basics and move into more advanced skills step by step.
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-column">
+                    <div class="faq-card" data-open="false">
+                        <button class="faq-toggle" aria-expanded="false">
+                            <span class="faq-question">Q3) Will these courses help if I have never created content before?</span>
+                            <span class="faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-answer-wrapper">
+                            <span class="faq-answer">
+                                Yes, the curriculum starts from zero and guides you through niche selection, content planning, and building confidence on camera or behind the scenes.
+                            </span>
+                        </div>
+                    </div>
+                    <div class="faq-card" data-open="false">
+                        <button class="faq-toggle" aria-expanded="false">
+                            <span class="faq-question">Q4) What is included in the course?</span>
+                            <span class="faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-answer-wrapper">
+                            <span class="faq-answer">
+                                Recorded videos, examples, worksheets or notes wherever helpful, and a completion certificate. Any additional tools or resources will be mentioned in the course details.
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-group">
+            <h2 class="faq-group-title">Partnership And Collaboration</h2>
+            <div class="faq-columns">
+                <div class="faq-column">
+                    <div class="faq-card" data-open="false">
+                        <button class="faq-toggle" aria-expanded="false">
+                            <span class="faq-question">Q1) How can schools or colleges partner with Engauge Learning?</span>
+                            <span class="faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-answer-wrapper">
+                            <span class="faq-answer">
+                                Institutions can integrate our creator curriculum, run workshops, or explore custom programs. You can share your details through the Support Form under "Partnership" and we will connect with you.
+                            </span>
+                        </div>
+                    </div>
+                    <div class="faq-card" data-open="false">
+                        <button class="faq-toggle" aria-expanded="false">
+                            <span class="faq-question">Q2) Can brands collaborate with your creator network?</span>
+                            <span class="faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-answer-wrapper">
+                            <span class="faq-answer">
+                                Yes. We work with partner brands to offer live briefs, projects, and creator opportunities. You can reach out through the Support Form to explore this.
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-column">
+                    <div class="faq-card" data-open="false">
+                        <button class="faq-toggle" aria-expanded="false">
+                            <span class="faq-question">Q3) How can I apply as a mentor?</span>
+                            <span class="faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-answer-wrapper">
+                            <span class="faq-answer">
+                                If you teach or work in any area of content creation, digital marketing, or creator strategy, you can apply through the "Apply As Mentor" form.
+                            </span>
+                        </div>
+                    </div>
+                    <div class="faq-card" data-open="false">
+                        <button class="faq-toggle" aria-expanded="false">
+                            <span class="faq-question">Q4) Do you co create courses with industry professionals?</span>
+                            <span class="faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-answer-wrapper">
+                            <span class="faq-answer">
+                                Yes, we collaborate with practitioners to build courses that are practical and relevant. If you are interested, you can submit your details through the Support Form.
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </section>
 
     <div class="faq-cta-wrapper">
         <div class="faq-cta">
-            <h3>Still Have Questions?</h3>
-            <p>Contact us, we are happy to help you</p>
+            <h3>Need More Help?</h3>
+            <p>If your question is not listed above, reach out through the Support Form and our team will assist you.</p>
             <div class="faq-cta-footer">
                 <div class="faq-cta-avatars">
                     <img class="faq-cta-avatar"
@@ -363,19 +927,36 @@
                         src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=facearea&w=150&h=150&q=80"
                         alt="Student support team member" loading="lazy" />
                 </div>
-                <a class="cta-button" href="/contact-us">Contact Us</a>
+                <a class="cta-button" href="/contact-us">Open Support Form</a>
             </div>
         </div>
     </div>
 
     <script>
-        const faqCards = document.querySelectorAll('.faq-card');
+        const faqCards = Array.from(document.querySelectorAll('.faq-card'));
 
         const toggleCard = (card, shouldOpen) => {
+            if (!card) {
+                return;
+            }
+
             card.setAttribute('data-open', String(shouldOpen));
             const toggle = card.querySelector('.faq-toggle');
             if (toggle) {
                 toggle.setAttribute('aria-expanded', String(shouldOpen));
+            }
+
+            const answerWrapper = card.querySelector('.faq-answer-wrapper');
+            if (answerWrapper) {
+                if (shouldOpen) {
+                    answerWrapper.style.maxHeight = `${answerWrapper.scrollHeight}px`;
+                    answerWrapper.style.opacity = '1';
+                    answerWrapper.style.marginTop = '18px';
+                } else {
+                    answerWrapper.style.maxHeight = '0px';
+                    answerWrapper.style.opacity = '0';
+                    answerWrapper.style.marginTop = '0px';
+                }
             }
         };
 
@@ -383,6 +964,10 @@
             button.addEventListener('click', (event) => {
                 event.preventDefault();
                 const card = button.closest('.faq-card');
+                if (!card) {
+                    return;
+                }
+
                 const isOpen = card.getAttribute('data-open') === 'true';
 
                 faqCards.forEach((faqCard) => {
