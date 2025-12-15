@@ -9,11 +9,23 @@
         body {
             margin: 0;
             background: linear-gradient(180deg, #F7F9FC 0%, #F3F6FB 60%, #EDEDED 100%);
+        }
+
+        .engauge-help-center {
+            width: 100%;
+            min-height: 100vh;
+            background: linear-gradient(180deg, #F7F9FC 0%, #F3F6FB 60%, #EDEDED 100%);
             font-family: "Poppins", "Raleway", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
             color: #1D1D1D;
         }
 
-        h1 {
+        .engauge-help-center *,
+        .engauge-help-center *::before,
+        .engauge-help-center *::after {
+            box-sizing: border-box;
+        }
+
+        .engauge-help-center h1 {
             margin: 0 0 16px;
             font-size: 36px;
             line-height: 1.2;
@@ -21,7 +33,7 @@
             color: #0047AB;
         }
 
-        .page-intro {
+        .engauge-help-center .page-intro {
             width: 100%;
             max-width: 960px;
             margin: 60px auto 48px;
@@ -30,14 +42,14 @@
             box-sizing: border-box;
         }
 
-        .page-intro p {
+        .engauge-help-center .page-intro p {
             margin: 0;
             font-size: 17px;
             line-height: 1.6;
             color: rgba(29, 29, 29, 0.85);
         }
 
-        .faq-section {
+        .engauge-help-center .faq-section {
             width: 100%;
             max-width: 1200px;
             margin: 0 auto;
@@ -48,13 +60,18 @@
             gap: 64px;
         }
 
-        .faq-group {
+        .engauge-help-center .faq-group {
             display: flex;
             flex-direction: column;
             gap: 24px;
         }
 
-        .faq-group-title {
+        .engauge-help-center .faq-group.common-queries .faq-card {
+            min-height: 100px;
+            padding: 24px 32px 24px 36px;
+        }
+
+        .engauge-help-center .faq-group-title {
             margin: 0;
             font-size: 24px;
             font-weight: 600;
@@ -63,18 +80,18 @@
             letter-spacing: 0.02em;
         }
 
-        .faq-columns {
+        .engauge-help-center .faq-columns {
             display: grid;
             grid-template-columns: repeat(2, minmax(0, 1fr));
             gap: 28px 40px;
             align-items: start;
         }
 
-        .faq-columns.single-column {
+        .engauge-help-center .faq-columns.single-column {
             grid-template-columns: minmax(0, 1fr);
         }
 
-        .faq-cta-wrapper {
+        .engauge-help-center .faq-cta-wrapper {
             display: flex;
             justify-content: center;
             width: 100%;
@@ -83,7 +100,7 @@
             box-sizing: border-box;
         }
 
-        .faq-cta {
+        .engauge-help-center .faq-cta {
             width: 100%;
             max-width: 520px;
             border-radius: 28px;
@@ -94,20 +111,20 @@
             text-align: center;
         }
 
-        .faq-cta h3 {
+        .engauge-help-center .faq-cta h3 {
             margin: 0 0 10px;
             font-size: 22px;
             font-weight: 600;
             color: #1D1D1D;
         }
 
-        .faq-cta p {
+        .engauge-help-center .faq-cta p {
             margin: 0;
             font-size: 16px;
             color: rgba(29, 29, 29, 0.72);
         }
 
-        .faq-cta-footer {
+        .engauge-help-center .faq-cta-footer {
             margin-top: 28px;
             display: flex;
             flex-wrap: wrap;
@@ -116,13 +133,13 @@
             justify-content: center;
         }
 
-        .faq-cta-avatars {
+        .engauge-help-center .faq-cta-avatars {
             display: flex;
             align-items: center;
             justify-content: center;
         }
 
-        .faq-cta-avatar {
+        .engauge-help-center .faq-cta-avatar {
             width: 48px;
             height: 48px;
             border-radius: 50%;
@@ -131,13 +148,13 @@
             margin-left: -14px;
         }
 
-        .faq-cta-avatar:first-child {
+        .engauge-help-center .faq-cta-avatar:first-child {
             margin-left: 0;
         }
 
-        .cta-button,
-        .cta-button:link,
-        .cta-button:visited {
+        .engauge-help-center .cta-button,
+        .engauge-help-center .cta-button:link,
+        .engauge-help-center .cta-button:visited {
             border: none;
             border-radius: 30px;
             padding: 14px 28px;
@@ -151,17 +168,17 @@
             display: inline-block;
         }
 
-        .cta-button:hover {
+        .engauge-help-center .cta-button:hover {
             opacity: 0.9;
         }
 
-        .faq-column {
+        .engauge-help-center .faq-column {
             display: flex;
             flex-direction: column;
             gap: 24px;
         }
 
-        .faq-card {
+        .engauge-help-center .faq-card {
             position: relative;
             border: 1px solid rgba(0, 71, 171, 0.1);
             border-radius: 28px;
@@ -173,14 +190,14 @@
             flex-direction: column;
         }
 
-        .faq-card:hover {
+        .engauge-help-center .faq-card:hover {
             background: #F9FBFF;
             border-color: rgba(0, 71, 171, 0.35);
             box-shadow: 0 26px 50px rgba(0, 71, 171, 0.18);
             transform: translateY(-3px);
         }
 
-        .faq-toggle {
+        .engauge-help-center .faq-toggle {
             display: flex;
             width: 100%;
             align-items: flex-start;
@@ -191,10 +208,9 @@
             background: transparent;
             border: none;
             text-align: left;
-            min-height: var(--faq-question-min-height, auto);
         }
 
-        .faq-question {
+        .engauge-help-center .faq-question {
             font-size: 18px;
             font-weight: 500;
             letter-spacing: 0.01em;
@@ -202,13 +218,13 @@
             line-height: 1.5;
         }
 
-        .faq-icon {
+        .engauge-help-center .faq-icon {
             width: 20px;
             height: 20px;
             position: relative;
         }
 
-        .faq-icon::before {
+        .engauge-help-center .faq-icon::before {
             content: "";
             position: absolute;
             inset: 0;
@@ -221,24 +237,24 @@
             transition: transform 160ms ease;
         }
 
-        .faq-card[data-open="true"] .faq-icon::before {
+        .engauge-help-center .faq-card[data-open="true"] .faq-icon::before {
             transform: rotate(180deg);
         }
 
-        .faq-answer-wrapper {
+        .engauge-help-center .faq-answer-wrapper {
             overflow: hidden;
             max-height: 0;
             opacity: 0;
             transition: max-height 220ms ease, opacity 180ms ease;
         }
 
-        .faq-card[data-open="true"] .faq-answer-wrapper {
+        .engauge-help-center .faq-card[data-open="true"] .faq-answer-wrapper {
             max-height: 600px;
             opacity: 1;
             margin-top: 18px;
         }
 
-        .faq-answer {
+        .engauge-help-center .faq-answer {
             display: block;
             margin: 0;
             font-size: 15px;
@@ -248,33 +264,33 @@
         }
 
         @media (max-width: 900px) {
-            .faq-columns {
+            .engauge-help-center .faq-columns {
                 grid-template-columns: 1fr;
             }
 
-            .faq-cta-wrapper {
+            .engauge-help-center .faq-cta-wrapper {
                 margin: 60px auto;
             }
         }
 
         @media (max-width: 599px) {
-            body {
+            .engauge-help-center {
                 padding: 48px 20px 72px;
             }
 
-            .faq-card {
+            .engauge-help-center .faq-card {
                 padding: 20px 24px;
             }
 
-            .faq-question {
+            .engauge-help-center .faq-question {
                 font-size: 16px;
             }
 
-            .faq-cta {
+            .engauge-help-center .faq-cta {
                 padding: 28px;
             }
 
-            .faq-cta-footer {
+            .engauge-help-center .faq-cta-footer {
                 flex-direction: column;
                 align-items: center;
             }
@@ -283,13 +299,14 @@
 </head>
 
 <body>
-    <header class="page-intro">
-        <h1>Crescere Academy &mdash; Help Center</h1>
-        <p>Browse the FAQs below for quick answers, or reach out to our support team anytime you need personal help.</p>
-    </header>
+    <div class="engauge-help-center">
+        <header class="page-intro">
+            <h1>Crescere Academy &mdash; Help Center</h1>
+            <p>Browse the FAQs below for quick answers, or reach out to our support team anytime you need personal help.</p>
+        </header>
 
-    <section class="faq-section">
-        <div class="faq-group">
+        <section class="faq-section">
+        <div class="faq-group common-queries">
             <h2 class="faq-group-title">Common Queries</h2>
             <div class="faq-columns">
                 <div class="faq-column">
@@ -917,37 +934,46 @@
             </div>
         </div>
 
-    </section>
+        </section>
 
-    <div class="faq-cta-wrapper">
-        <div class="faq-cta">
-            <h3>Need More Help?</h3>
-            <p>If your question is not listed above, reach out through the Support Form and our team will assist you.</p>
-            <div class="faq-cta-footer">
-                <div class="faq-cta-avatars">
-                    <img class="faq-cta-avatar"
-                        src="https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=facearea&w=150&h=150&q=80"
-                        alt="Student support team member" loading="lazy" />
-                    <img class="faq-cta-avatar"
-                        src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?auto=format&fit=facearea&w=150&h=150&q=80"
-                        alt="Student support team member" loading="lazy" />
-                    <img class="faq-cta-avatar"
-                        src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=facearea&w=150&h=150&q=80"
-                        alt="Student support team member" loading="lazy" />
+        <div class="faq-cta-wrapper">
+            <div class="faq-cta">
+                <h3>Need More Help?</h3>
+                <p>If your question is not listed above, reach out through the Support Form and our team will assist you.</p>
+                <div class="faq-cta-footer">
+                    <div class="faq-cta-avatars">
+                        <img class="faq-cta-avatar"
+                            src="https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=facearea&w=150&h=150&q=80"
+                            alt="Student support team member" loading="lazy" />
+                        <img class="faq-cta-avatar"
+                            src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?auto=format&fit=facearea&w=150&h=150&q=80"
+                            alt="Student support team member" loading="lazy" />
+                        <img class="faq-cta-avatar"
+                            src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=facearea&w=150&h=150&q=80"
+                            alt="Student support team member" loading="lazy" />
+                    </div>
+                    <a class="cta-button" href="/contact-us">Contact Us</a>
                 </div>
-                <a class="cta-button" href="/contact-us">Contact Us</a>
             </div>
         </div>
     </div>
 
     <script>
-        const faqCards = Array.from(document.querySelectorAll('.faq-card'));
+        const faqRoot = document.querySelector('.engauge-help-center');
+        const faqCards = faqRoot ? Array.from(faqRoot.querySelectorAll('.faq-card')) : [];
 
         const equalizeQuestionRows = () => {
             const isStackedLayout = window.matchMedia('(max-width: 900px)').matches;
-            document.querySelectorAll('.faq-columns').forEach((wrapper) => {
+            if (!faqRoot) {
+                return;
+            }
+
+            faqRoot.querySelectorAll('.faq-columns').forEach((wrapper) => {
                 wrapper.querySelectorAll('.faq-card').forEach((card) => {
-                    card.style.removeProperty('--faq-question-min-height');
+                    const toggle = card.querySelector('.faq-toggle');
+                    if (toggle) {
+                        toggle.style.removeProperty('min-height');
+                    }
                 });
 
                 if (isStackedLayout) {
@@ -980,7 +1006,10 @@
                     );
 
                     rowCards.forEach((card) => {
-                        card.style.setProperty('--faq-question-min-height', `${rowHeight}px`);
+                        const toggle = card.querySelector('.faq-toggle');
+                        if (toggle) {
+                            toggle.style.minHeight = `${rowHeight}px`;
+                        }
                     });
                 }
             });
@@ -1015,14 +1044,14 @@
             }
         };
 
-        document.querySelectorAll('.faq-toggle').forEach((button) => {
+        faqCards.forEach((card) => {
+            const button = card.querySelector('.faq-toggle');
+            if (!button) {
+                return;
+            }
+
             button.addEventListener('click', (event) => {
                 event.preventDefault();
-                const card = button.closest('.faq-card');
-                if (!card) {
-                    return;
-                }
-
                 const isOpen = card.getAttribute('data-open') === 'true';
 
                 faqCards.forEach((faqCard) => {
