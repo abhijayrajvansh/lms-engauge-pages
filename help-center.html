@@ -173,27 +173,11 @@
             flex-direction: column;
         }
 
-        .faq-card::before {
-            content: "";
-            position: absolute;
-            inset: 14px 20px auto;
-            height: 6px;
-            border-radius: 999px;
-            background: linear-gradient(90deg, rgba(0, 71, 171, 0.32), rgba(16, 83, 175, 0.14));
-            opacity: 0;
-            transition: opacity 180ms ease;
-            pointer-events: none;
-        }
-
         .faq-card:hover {
             background: #F9FBFF;
             border-color: rgba(0, 71, 171, 0.35);
             box-shadow: 0 26px 50px rgba(0, 71, 171, 0.18);
             transform: translateY(-3px);
-        }
-
-        .faq-card:hover::before {
-            opacity: 1;
         }
 
         .faq-toggle {
