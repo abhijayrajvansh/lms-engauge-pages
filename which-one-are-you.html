@@ -75,7 +75,7 @@
     .persona-card {
         width: 100%;
         box-sizing: border-box;
-        padding: clamp(28px, 5vw, 64px);
+        padding: clamp(20px, 4vw, 48px) clamp(28px, 5vw, 64px);
         display: flex;
         gap: clamp(24px, 4vw, 80px);
         align-items: stretch;
@@ -89,7 +89,7 @@
     }
 
     .persona-card.is-dark {
-        background: #1D1D1D;
+        background: #0047AB;
     }
 
     .persona-card__content {
@@ -121,8 +121,15 @@
     }
 
     .persona-card:first-child .persona-card__title {
-        font-size: clamp(54px, 8vw, 90px);
-        font-weight: 800;
+        font-size: clamp(30px, 4vw, 52px);
+        font-weight: 700;
+        margin-top: -18px;
+        margin-bottom: -14px;
+    }
+
+    .persona-card:nth-child(n+2):nth-child(-n+4) .persona-card__title {
+        font-size: clamp(30px, 4vw, 52px);
+        font-weight: 700;
         margin-top: -18px;
         margin-bottom: -14px;
     }
@@ -268,7 +275,6 @@
 
                 <div class="persona-card__visual">
                     <img src="https://imgproxy-g.learnyst.com/learnyst-user-assets/websites/191687/images/1__1__lyst1766143434711.png" alt="Creator smiling and holding a stabilizer" />
-                    <span class="persona-card__stamp">Moksha</span>
                 </div>
             </div>
 
@@ -292,8 +298,7 @@
                 </div>
 
                 <div class="persona-card__visual">
-                    <img src="https://imgproxy.learnyst.com/learnyst-user-assets/websites/191573/images/Gemini_Generated_Image_m8qvdpm8qvdpm8qv_modified_lyst1763030385643.png" alt="Content creator filming at a home studio" />
-                    <span class="persona-card__stamp">Aadi</span>
+                    <img src="https://imgproxy-g.learnyst.com/learnyst-user-assets/websites/191687/images/2__1__lyst1766145370285.png" alt="Content creator filming at a home studio" />
                 </div>
             </div>
 
@@ -317,8 +322,7 @@
                 </div>
 
                 <div class="persona-card__visual">
-                    <img src="https://imgproxy.learnyst.com/learnyst-user-assets/websites/191573/images/Gemini_Generated_Image_fyfx0pfyfx0pfyfx_modified_lyst1763030710596.png" alt="Young professional speaking on stage" />
-                    <span class="persona-card__stamp">Rhea</span>
+                    <img src="https://imgproxy-g.learnyst.com/learnyst-user-assets/websites/191687/images/3__1__lyst1766145270312.png" alt="Young professional speaking on stage" />
                 </div>
             </div>
 
@@ -343,8 +347,7 @@
                 </div>
 
                 <div class="persona-card__visual">
-                    <img src="https://imgproxy.learnyst.com/learnyst-user-assets/websites/191573/images/this_modified_lyst1763031220362.png" alt="Creator pausing to reset goals" />
-                    <span class="persona-card__stamp">Sara</span>
+                    <img src="https://imgproxy-g.learnyst.com/learnyst-user-assets/websites/191687/images/4__1__lyst1766145335661.png" alt="Creator pausing to reset goals" />
                 </div>
             </div>
         </div>
