@@ -78,7 +78,7 @@
         padding: clamp(28px, 5vw, 64px);
         display: flex;
         gap: clamp(24px, 4vw, 80px);
-        align-items: center;
+        align-items: stretch;
         justify-content: space-between;
         background: #0047AB;
         color: #FFFFFF;
@@ -108,12 +108,23 @@
         color: rgba(255, 255, 255, 0.78);
     }
 
+    .persona-card:first-child .persona-card__eyebrow {
+        margin-bottom: 4px;
+    }
+
     .persona-card__title {
         margin: 0;
         font-family: "Raleway", "Poppins", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
         font-size: clamp(42px, 7vw, 74px);
         line-height: 1.05;
         text-transform: uppercase;
+    }
+
+    .persona-card:first-child .persona-card__title {
+        font-size: clamp(54px, 8vw, 90px);
+        font-weight: 800;
+        margin-top: -18px;
+        margin-bottom: -14px;
     }
 
     .persona-card__chips {
@@ -158,6 +169,7 @@
         align-items: flex-end;
         justify-content: center;
         min-height: clamp(260px, 30vw, 420px);
+        height: 100%;
     }
 
     .persona-card__visual::before {
@@ -168,6 +180,7 @@
         position: relative;
         z-index: 1;
         width: 100%;
+        height: 100%;
         border-radius: 32px;
         object-fit: cover;
     }
@@ -198,16 +211,19 @@
     @media (max-width: 1024px) {
         .persona-card {
             flex-direction: column;
+            align-items: flex-start;
             padding: 32px 24px 48px;
         }
 
         .persona-card__visual {
             width: 100%;
             flex: none;
+            height: auto;
         }
 
         .persona-card__visual img {
             max-width: 420px;
+            height: auto;
         }
     }
 
@@ -251,7 +267,7 @@
                 </div>
 
                 <div class="persona-card__visual">
-                    <img src="https://imgproxy-g.learnyst.com/learnyst-user-assets/websites/191687/images/1_lyst1766142821037.png" alt="Creator smiling and holding a stabilizer" />
+                    <img src="https://imgproxy-g.learnyst.com/learnyst-user-assets/websites/191687/images/1__1__lyst1766143434711.png" alt="Creator smiling and holding a stabilizer" />
                     <span class="persona-card__stamp">Moksha</span>
                 </div>
             </div>
