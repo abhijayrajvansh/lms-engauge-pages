@@ -8,7 +8,7 @@
     body {
         font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
         margin: 0;
-        background: #EDEDED;
+        background: transparent;
         color: #1D1D1D;
     }
 
@@ -32,16 +32,17 @@
     .stacked-track {
         display: flex;
         flex-direction: column;
-        gap: 48px;
+        gap: 40px;
         transition: transform 0.45s ease;
         will-change: transform;
-        padding-bottom: 48px;
+        padding-bottom: 0;
     }
 
     .stacked-nav {
         position: absolute;
-        bottom: 32px;
+        top: 50%;
         right: clamp(16px, 4vw, 64px);
+        transform: translateY(-50%);
         display: flex;
         flex-direction: column;
         gap: 12px;
@@ -59,7 +60,6 @@
         font-weight: 600;
         cursor: pointer;
         transition: background 0.2s ease, color 0.2s ease;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     }
 
     .stacked-nav button:hover:not(:disabled) {
@@ -86,7 +86,6 @@
         position: relative;
         overflow: hidden;
         isolation: isolate;
-        box-shadow: 0 40px 80px rgba(0, 0, 0, 0.25);
     }
 
     .persona-card.is-dark {
@@ -381,7 +380,7 @@
             }
 
             const nextSlide = slides[currentIndex + 1];
-            const peek = nextSlide ? nextSlide.scrollHeight * 0.1 : 0;
+            const peek = nextSlide ? nextSlide.scrollHeight * 0.2 : 0;
             shell.style.height = `${activeSlide.scrollHeight + peek}px`;
         };
 
