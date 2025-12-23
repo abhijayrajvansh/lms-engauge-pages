@@ -8,7 +8,6 @@
     <style>
         body {
             margin: 0;
-            padding: 80px 24px 100px;
             background: #F3F6FB;
             font-family: "Poppins", "Raleway", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
             color: #1D1D1D;
@@ -32,9 +31,10 @@
 
         .faq-heading {
             margin: 0;
-            font-size: 40px;
-            font-weight: 600;
+            font-size: 48px;
+            font-weight: 800;
             line-height: 1.2;
+            color: #0047AB;
         }
 
         .faq-description {
@@ -121,6 +121,22 @@
             display: flex;
             flex-direction: column;
             gap: 20px;
+        }
+
+        .faq-help-center {
+            margin: 8px 0 0;
+            font-size: 16px;
+            color: #1D1D1D;
+        }
+
+        .faq-help-center a {
+            color: #0047AB;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .faq-help-center a:hover {
+            text-decoration: underline;
         }
 
         .faq-card {
@@ -312,6 +328,7 @@
                     </span>
                 </div>
             </div>
+            <p class="faq-help-center">Got more questions? <a href="/help-center">Visit the help center</a></p>
         </div>
     </section>
 
