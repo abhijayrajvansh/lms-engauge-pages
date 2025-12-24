@@ -132,81 +132,13 @@
             border-radius: 16px;
             display: flex;
             flex-direction: column;
-            gap: 20px;
         }
 
-        .form-group {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-
-        .form-group label {
-            font-size: 14px;
-            font-weight: 600;
-            color: #FFFFFF;
-        }
-
-        .form-group span {
-            font-size: 12px;
-            color: rgba(255, 255, 255, 0.72);
-        }
-
-        .partner-form input,
-        .partner-form select,
-        .partner-form textarea {
-            padding: 12px;
-            border: 1px solid rgba(29, 29, 29, 0.2);
-            border-radius: 10px;
-            font-size: 14px;
-            font-family: "Poppins", "Raleway", Arial, sans-serif;
-            background-color: #FFFFFF;
-        }
-
-        .checkbox-group,
-        .radio-group {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-
-        .checkbox-group label,
-        .radio-group label {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 14px;
-            color: #FFFFFF;
-        }
-
-        .checkbox-group input,
-        .radio-group input {
-            width: 16px;
-            height: 16px;
-        }
-
-        .checkbox-group input[type="text"] {
+        .partner-form iframe {
             width: 100%;
-            margin-left: 24px;
-        }
-
-        .form-helper {
-            font-size: 12px;
-            color: #FFFFFF;
-        }
-
-        .submit-button {
-            padding: 16px;
-            background-color: #FFFFFF;
-            color: #0047AB;
+            min-height: 520px;
             border: none;
             border-radius: 12px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-        }
-
-        .submit-button:hover {
             background-color: #FFFFFF;
         }
 
@@ -272,82 +204,15 @@
                 </div>
             </div>
 
-            <!-- UPDATED: added id="partnerForm" -->
-            <form class="partner-form" id="partnerForm">
-                <div class="form-group">
-                    <label for="contact-name">Full Name *</label>
-                    <!-- UPDATED: name="full_name" -->
-                    <input type="text" id="contact-name" name="full_name" required />
-                    <span class="form-helper">This is a required question</span>
-                </div>
-
-                <div class="form-group">
-                    <label for="email">Email ID *</label>
-                    <input type="email" id="email" name="email" required />
-                    <span class="form-helper">This is a required question</span>
-                </div>
-
-                <div class="form-group">
-                    <label for="phone">Phone Number *</label>
-                    <input type="tel" id="phone" name="phone" required />
-                    <span class="form-helper">This is a required question</span>
-                </div>
-
-                <div class="form-group">
-                    <label for="institution-name">Institution Name *</label>
-                    <!-- UPDATED: name="institution" -->
-                    <input type="text" id="institution-name" name="institution" required />
-                    <span class="form-helper">This is a required question</span>
-                </div>
-
-                <button type="submit" class="submit-button">Submit Partnership Request</button>
-            </form>
+            <div class="partner-form">
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeOM0o5v0q9OM6Dh5Wfbf_-zAqFpzikYJYIRMm7KEI0yf7N8Q/viewform?embedded=true"
+                    title="Engauge Learning Partner Interest Form" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    Loading...
+                </iframe>
+            </div>
         </div>
     </section>
 
-    <!-- UPDATED: submit handler (sends the 4 fields to your Apps Script URL) -->
-     <script>
-        const scriptURL =
-            "https://script.google.com/a/macros/engaugelearning.com/s/AKfycbwZqi2Vm392tBdFoxPNor6iDeUJ_4-RAtTp0Dr6OaoQriQTtmOykaoNat1Nl_WMveKn/exec";
-
-        const form = document.getElementById("partnerForm");
-        const btn = form.querySelector('button[type="submit"]');
-
-        form.addEventListener("submit", (e) => {
-            e.preventDefault();
-
-            btn.disabled = true;
-            const originalText = btn.textContent;
-            btn.textContent = "Submitting...";
-
-            const fd = new FormData(form);
-
-            // Make sure these name= values exist in your inputs
-            const full_name = encodeURIComponent(fd.get("full_name") || "");
-            const email = encodeURIComponent(fd.get("email") || "");
-            const phone = encodeURIComponent(fd.get("phone") || "");
-            const institution = encodeURIComponent(fd.get("institution") || "");
-
-            const url =
-            `${scriptURL}?full_name=${full_name}&email=${email}&phone=${phone}&institution=${institution}&_ts=${Date.now()}`;
-
-            // Beacon request (works even with strict CORS)
-            const img = new Image();
-            img.onload = () => {
-            alert("Submitted successfully!");
-            form.reset();
-            btn.disabled = false;
-            btn.textContent = originalText;
-            };
-            img.onerror = () => {
-            alert("Submit failed. Please try again.");
-            btn.disabled = false;
-            btn.textContent = originalText;
-            };
-            img.src = url;
-        });
-    </script>
-    
 </body>
 
 </html>
