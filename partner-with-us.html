@@ -1,334 +1,347 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Partner With Engauge Learning</title>
-        <style>
 
-            body {
-                margin: 0;
-                background-color: #FFFFFF;
-                font-family: "Poppins", "Raleway", Arial, sans-serif;
-                color: #1D1D1D;
-            }
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Partner With Engauge Learning</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: #FFFFFF;
+            font-family: "Poppins", "Raleway", Arial, sans-serif;
+            color: #1D1D1D;
+        }
 
+        .partner-card {
+            width: 100%;
+            margin: 0;
+            background-color: #FFFFFF;
+            border-radius: 18px;
+            padding: 48px 56px;
+        }
+
+        .partner-layout {
+            display: flex;
+            gap: 48px;
+            align-items: stretch;
+        }
+
+        .partner-info {
+            flex: 1 1 50%;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .partner-card h1 {
+            font-size: 32px;
+            font-weight: 600;
+            margin: 0 0 16px;
+            line-height: 1.3;
+            text-align: left;
+        }
+
+        .partner-card h1 span {
+            color: #0047AB;
+        }
+
+        .partner-card p {
+            margin: 0 0 32px;
+            font-size: 16px;
+            color: rgba(29, 29, 29, 0.72);
+            max-width: 620px;
+            text-align: left;
+        }
+
+        .benefits-cta {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 24px;
+            margin-top: 32px;
+            width: 100%;
+            flex: 1 1 auto;
+        }
+
+        .benefits-cta .cta-button {
+            width: 100%;
+            margin-top: auto;
+        }
+
+        .benefits-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            flex: 1 1 auto;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .benefit-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
+            background-color: #0047AB;
+            color: #FFFFFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.16);
+        }
+
+        .cta-button,
+        .cta-button:visited {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px 32px;
+            background-color: #0047AB;
+            color: #FFFFFF !important;
+            border-radius: 12px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            min-width: 260px;
+            align-self: flex-start;
+            margin-top: 8px;
+            box-shadow: none;
+            transition: none;
+        }
+
+        .cta-button:hover {
+            background-color: #0047AB;
+            color: #FFFFFF !important;
+            box-shadow: none;
+        }
+
+        .partner-form {
+            flex: 1 1 50%;
+            background-color: #0047AB;
+            padding: 32px;
+            border-radius: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-group label {
+            font-size: 14px;
+            font-weight: 600;
+            color: #FFFFFF;
+        }
+
+        .form-group span {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.72);
+        }
+
+        .partner-form input,
+        .partner-form select,
+        .partner-form textarea {
+            padding: 12px;
+            border: 1px solid rgba(29, 29, 29, 0.2);
+            border-radius: 10px;
+            font-size: 14px;
+            font-family: "Poppins", "Raleway", Arial, sans-serif;
+            background-color: #FFFFFF;
+        }
+
+        .checkbox-group,
+        .radio-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .checkbox-group label,
+        .radio-group label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: #FFFFFF;
+        }
+
+        .checkbox-group input,
+        .radio-group input {
+            width: 16px;
+            height: 16px;
+        }
+
+        .checkbox-group input[type="text"] {
+            width: 100%;
+            margin-left: 24px;
+        }
+
+        .form-helper {
+            font-size: 12px;
+            color: #FFFFFF;
+        }
+
+        .submit-button {
+            padding: 16px;
+            background-color: #FFFFFF;
+            color: #0047AB;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .submit-button:hover {
+            background-color: #FFFFFF;
+        }
+
+        @media (max-width: 768px) {
             .partner-card {
-                width: 100%;
-                margin: 0;
-                background-color: #FFFFFF;
-                border-radius: 18px;
-                padding: 48px 56px;
+                padding: 32px 24px;
             }
 
             .partner-layout {
-                display: flex;
-                gap: 48px;
-                align-items: flex-start;
-            }
-
-            .partner-info {
-                flex: 1 1 50%;
+                flex-direction: column;
             }
 
             .partner-card h1 {
                 font-size: 32px;
-                font-weight: 600;
-                margin: 0 0 16px;
-                line-height: 1.3;
-                text-align: left;
-            }
-
-            .partner-card h1 span {
-                color: #0047AB;
-            }
-
-            .partner-card p {
-                margin: 0 0 32px;
-                font-size: 16px;
-                color: rgba(29, 29, 29, 0.72);
-                max-width: 620px;
-                text-align: left;
-            }
-
-            .benefits-cta {
-                display: flex;
-                align-items: flex-start;
-                gap: 24px;
-                margin-top: 32px;
-            }
-
-            .benefits-list {
-                list-style: none;
-                margin: 0;
-                padding: 0;
-                display: flex;
-                flex-direction: column;
-                gap: 16px;
-                flex: 1 1 auto;
             }
 
             .benefit-item {
-                display: flex;
-                align-items: center;
-                gap: 16px;
-                font-size: 18px;
-                font-weight: 600;
-            }
-
-            .benefit-icon {
-                width: 40px;
-                height: 40px;
-                border-radius: 12px;
-                background-color: #0047AB;
-                color: #FFFFFF;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-size: 20px;
-                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.16);
-            }
-
-            .cta-button,
-            .cta-button:visited {
-                display: inline-flex;
-                align-items: center;
-                justify-content: center;
-                padding: 16px 32px;
-                background-color: #0047AB;
-                color: #FFFFFF !important;
-                border-radius: 12px;
-                text-decoration: none;
                 font-size: 16px;
-                font-weight: 600;
-                min-width: 260px;
-                align-self: flex-start;
-                margin-top: 8px;
-                box-shadow: none;
-                transition: none;
             }
 
-            .cta-button:hover {
-                background-color: #0047AB;
-                color: #FFFFFF !important;
-                box-shadow: none;
+            .benefits-cta {
+                flex-direction: column;
+            }
+
+            .cta-button {
+                width: 100%;
             }
 
             .partner-form {
-                flex: 1 1 50%;
-                background-color: #0047AB;
-                padding: 32px;
-                border-radius: 16px;
-                display: flex;
-                flex-direction: column;
-                gap: 20px;
-            }
-
-            .form-group {
-                display: flex;
-                flex-direction: column;
-                gap: 8px;
-            }
-
-            .form-group label {
-                font-size: 14px;
-                font-weight: 600;
-                color: #FFFFFF;
-            }
-
-            .form-group span {
-                font-size: 12px;
-                color: rgba(255, 255, 255, 0.72);
-            }
-
-            .partner-form input,
-            .partner-form select,
-            .partner-form textarea {
-                padding: 12px;
-                border: 1px solid rgba(29, 29, 29, 0.2);
-                border-radius: 10px;
-                font-size: 14px;
-                font-family: "Poppins", "Raleway", Arial, sans-serif;
-                background-color: #FFFFFF;
-            }
-
-            .checkbox-group,
-            .radio-group {
-                display: flex;
-                flex-direction: column;
-                gap: 8px;
-            }
-
-            .checkbox-group label,
-            .radio-group label {
-                display: flex;
-                align-items: center;
-                gap: 8px;
-                font-size: 14px;
-                color: #FFFFFF;
-            }
-
-            .checkbox-group input,
-            .radio-group input {
-                width: 16px;
-                height: 16px;
-            }
-
-            .checkbox-group input[type="text"] {
                 width: 100%;
-                margin-left: 24px;
             }
+        }
+    </style>
+</head>
 
-            .form-helper {
-                font-size: 12px;
-                color: #FFFFFF;
-            }
-
-            .submit-button {
-                padding: 16px;
-                background-color: #FFFFFF;
-                color: #0047AB;
-                border: none;
-                border-radius: 12px;
-                font-size: 16px;
-                font-weight: 600;
-                cursor: pointer;
-            }
-
-            .submit-button:hover {
-                background-color: #FFFFFF;
-            }
-
-            @media (max-width: 768px) {
-                .partner-card {
-                    padding: 32px 24px;
-                }
-
-                .partner-layout {
-                    flex-direction: column;
-                }
-
-                .partner-card h1 {
-                    font-size: 32px;
-                }
-
-                .benefit-item {
-                    font-size: 16px;
-                }
-
-                .benefits-cta {
-                    flex-direction: column;
-                }
-
-                .cta-button {
-                    width: 100%;
-                }
-
-                .partner-form {
-                    width: 100%;
-                }
-            }
-        </style>
-    </head>
-    <body>
-        <section class="partner-card">
-            <div class="partner-layout">
-                <div class="partner-info">
-                    <h1>Interested in bringing <span>Engauge Learning</span> to your institution?</h1>
-                    <p>
-                        We're currently developing pilot programs with select partner institutions. Join as early
-                        adopters to get exclusive benefits.
-                    </p>
-                    <div class="benefits-cta">
-                        <ul class="benefits-list">
-                            <li class="benefit-item">
-                                <span class="benefit-icon">&rsaquo;</span>
-                                <span>Customized curriculum for your institution</span>
-                            </li>
-                            <li class="benefit-item">
-                                <span class="benefit-icon">&rsaquo;</span>
-                                <span>Faculty training and development workshops</span>
-                            </li>
-                            <li class="benefit-item">
-                                <span class="benefit-icon">&rsaquo;</span>
-                                <span>Early access to our forthcoming LMS platform</span>
-                            </li>
-                        </ul>
-                    </div>
+<body>
+    <section class="partner-card">
+        <div class="partner-layout">
+            <div class="partner-info">
+                <h1>Interested in bringing <span>Engauge Learning</span> to your institution?</h1>
+                <p>
+                    We're currently developing pilot programs with select partner institutions. Join as early
+                    adopters to get exclusive benefits.
+                </p>
+                <div class="benefits-cta">
+                    <ul class="benefits-list">
+                        <li class="benefit-item">
+                            <span class="benefit-icon">&rsaquo;</span>
+                            <span>Customized curriculum for your institution</span>
+                        </li>
+                        <li class="benefit-item">
+                            <span class="benefit-icon">&rsaquo;</span>
+                            <span>Faculty training and development workshops</span>
+                        </li>
+                        <li class="benefit-item">
+                            <span class="benefit-icon">&rsaquo;</span>
+                            <span>Early access to our forthcoming LMS platform</span>
+                        </li>
+                    </ul>
+                    <a class="cta-button" href="https://forms.gle/XxFZoSwgKyz2Jtu37" target="_blank" rel="noopener noreferrer">
+                        Complete Full Partner Form
+                    </a>
                 </div>
-                <form class="partner-form">
-                    <div class="form-group">
-                        <label for="institution-name">Name of Institution *</label>
-                        <input type="text" id="institution-name" name="institution-name" required />
-                        <span class="form-helper">This is a required question</span>
-                    </div>
-                    <div class="form-group">
-                        <label for="institution-type">Type of Institution *</label>
-                        <select id="institution-type" name="institution-type" required>
-                            <option value="" disabled selected>Select an option</option>
-                            <option value="school">School</option>
-                            <option value="college">College</option>
-                            <option value="university">University</option>
-                            <option value="training">Training Institute</option>
-                        </select>
-                        <span class="form-helper">This is a required question</span>
-                    </div>
-                    <div class="form-group">
-                        <label for="website">Website *</label>
-                        <input type="url" id="website" name="website" required />
-                        <span class="form-helper">This is a required question</span>
-                    </div>
-                    <div class="form-group">
-                        <label for="location">City and State *</label>
-                        <input type="text" id="location" name="location" required />
-                        <span class="form-helper">This is a required question</span>
-                    </div>
-                    <div class="form-group">
-                        <label for="contact-name">Your Name *</label>
-                        <input type="text" id="contact-name" name="contact-name" required />
-                        <span class="form-helper">This is a required question</span>
-                    </div>
-                    <div class="form-group">
-                        <label for="designation">Designation *</label>
-                        <input type="text" id="designation" name="designation" required />
-                        <span class="form-helper">This is a required question</span>
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">Phone Number *</label>
-                        <input type="tel" id="phone" name="phone" required />
-                        <span class="form-helper">This is a required question</span>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email ID *</label>
-                        <input type="email" id="email" name="email" required />
-                        <span class="form-helper">This is a required question</span>
-                    </div>
-                    <div class="form-group">
-                        <label>Partnership Scope *</label>
-                        <div class="checkbox-group">
-                            <label><input type="checkbox" name="scope" value="curriculum" required /> Add creator curriculum to your existing program</label>
-                            <label><input type="checkbox" name="scope" value="workshops" /> Run workshops or masterclasses</label>
-                            <label><input type="checkbox" name="scope" value="full-program" /> Run a full semester or full year program</label>
-                            <label><input type="checkbox" name="scope" value="faculty-training" /> Train your faculty in creator education</label>
-                            <label><input type="checkbox" name="scope" value="certificate" /> Collaborate on a co-branded certificate program</label>
-                            <label><input type="checkbox" name="scope" value="other" /> Other:</label>
-                            <input type="text" id="scope-other" name="scope-other" placeholder="Describe your idea" />
-                        </div>
-                        <span class="form-helper">Select at least one option</span>
-                    </div>
-                    <div class="form-group">
-                        <label>Preferred Format *</label>
-                        <div class="checkbox-group">
-                            <label><input type="checkbox" name="format" value="offline" required /> Offline on campus</label>
-                            <label><input type="checkbox" name="format" value="hybrid" /> Hybrid</label>
-                            <label><input type="checkbox" name="format" value="online" /> Fully online</label>
-                            <label><input type="checkbox" name="format" value="workshops" /> Workshops only</label>
-                        </div>
-                        <span class="form-helper">Select at least one option</span>
-                    </div>
-                    <button type="submit" class="submit-button">Submit Partnership Request</button>
-                </form>
             </div>
-        </section>
-    </body>
+
+            <!-- UPDATED: added id="partnerForm" -->
+            <form class="partner-form" id="partnerForm">
+                <div class="form-group">
+                    <label for="contact-name">Full Name *</label>
+                    <!-- UPDATED: name="full_name" -->
+                    <input type="text" id="contact-name" name="full_name" required />
+                    <span class="form-helper">This is a required question</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email ID *</label>
+                    <input type="email" id="email" name="email" required />
+                    <span class="form-helper">This is a required question</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" id="phone" name="phone" required />
+                    <span class="form-helper">This is a required question</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="institution-name">Institution Name *</label>
+                    <!-- UPDATED: name="institution" -->
+                    <input type="text" id="institution-name" name="institution" required />
+                    <span class="form-helper">This is a required question</span>
+                </div>
+
+                <button type="submit" class="submit-button">Submit Partnership Request</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- UPDATED: submit handler (sends the 4 fields to your Apps Script URL) -->
+        <script>
+    const scriptURL =
+        "https://script.google.com/a/macros/engaugelearning.com/s/AKfycbwZqi2Vm392tBdFoxPNor6iDeUJ_4-RAtTp0Dr6OaoQriQTtmOykaoNat1Nl_WMveKn/exec";
+
+    const form = document.getElementById("partnerForm");
+    const btn = form.querySelector('button[type="submit"]');
+
+    form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        btn.disabled = true;
+        const originalText = btn.textContent;
+        btn.textContent = "Submitting...";
+
+        const payload = Object.fromEntries(new FormData(form).entries());
+
+        try {
+        await fetch(scriptURL, {
+            method: "POST",
+            mode: "no-cors",
+            headers: { "Content-Type": "text/plain;charset=utf-8" },
+            body: JSON.stringify(payload),
+        });
+
+        alert("Submitted successfully!");
+        form.reset();
+        } catch (err) {
+        alert("Network error: " + err.message);
+        } finally {
+        btn.disabled = false;
+        btn.textContent = originalText;
+        }
+    });
+    </script>
+
+
+</body>
+
 </html>
