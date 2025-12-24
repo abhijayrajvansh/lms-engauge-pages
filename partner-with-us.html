@@ -54,21 +54,6 @@
             text-align: left;
         }
 
-        .benefits-cta {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 24px;
-            margin-top: 32px;
-            width: 100%;
-            flex: 1 1 auto;
-        }
-
-        .benefits-cta .cta-button {
-            width: 100%;
-            margin-top: auto;
-        }
-
         .benefits-list {
             list-style: none;
             margin: 0;
@@ -100,43 +85,20 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.16);
         }
 
-        .cta-button,
-        .cta-button:visited {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 16px 32px;
-            background-color: #0047AB;
-            color: #FFFFFF !important;
-            border-radius: 12px;
-            text-decoration: none;
-            font-size: 16px;
-            font-weight: 600;
-            min-width: 260px;
-            align-self: flex-start;
-            margin-top: 8px;
-            box-shadow: none;
-            transition: none;
-        }
-
-        .cta-button:hover {
-            background-color: #0047AB;
-            color: #FFFFFF !important;
-            box-shadow: none;
-        }
-
         .partner-form {
             flex: 1 1 50%;
-            background-color: #0047AB;
-            padding: 32px;
+            background-color: transparent;
+            padding: 0;
             border-radius: 16px;
             display: flex;
             flex-direction: column;
+            overflow: hidden;
         }
 
         .partner-form iframe {
             width: 100%;
             min-height: 520px;
+            height: 100%;
             border: none;
             border-radius: 12px;
             background-color: #FFFFFF;
@@ -159,14 +121,6 @@
                 font-size: 16px;
             }
 
-            .benefits-cta {
-                flex-direction: column;
-            }
-
-            .cta-button {
-                width: 100%;
-            }
-
             .partner-form {
                 width: 100%;
             }
@@ -183,25 +137,20 @@
                     We're currently developing pilot programs with select partner institutions. Join as early
                     adopters to get exclusive benefits.
                 </p>
-                <div class="benefits-cta">
-                    <ul class="benefits-list">
-                        <li class="benefit-item">
-                            <span class="benefit-icon">&rsaquo;</span>
-                            <span>Customized curriculum for your institution</span>
-                        </li>
-                        <li class="benefit-item">
-                            <span class="benefit-icon">&rsaquo;</span>
-                            <span>Faculty training and development workshops</span>
-                        </li>
-                        <li class="benefit-item">
-                            <span class="benefit-icon">&rsaquo;</span>
-                            <span>Early access to our forthcoming LMS platform</span>
-                        </li>
-                    </ul>
-                    <a class="cta-button" href="https://forms.gle/XxFZoSwgKyz2Jtu37" target="_blank" rel="noopener noreferrer">
-                        Complete Full Partner Form
-                    </a>
-                </div>
+                <ul class="benefits-list">
+                    <li class="benefit-item">
+                        <span class="benefit-icon">&rsaquo;</span>
+                        <span>Customized curriculum for your institution</span>
+                    </li>
+                    <li class="benefit-item">
+                        <span class="benefit-icon">&rsaquo;</span>
+                        <span>Faculty training and development workshops</span>
+                    </li>
+                    <li class="benefit-item">
+                        <span class="benefit-icon">&rsaquo;</span>
+                        <span>Early access to our forthcoming LMS platform</span>
+                    </li>
+                </ul>
             </div>
 
             <div class="partner-form">
