@@ -1,108 +1,261 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Crescere Academy &mdash; About Us</title>
-        <style>
-            body {
-                margin: 0;
-                font-family: "Poppins", "Raleway", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-                font-size: 16px;
-                line-height: 1.7;
-                color: #1D1D1D;
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Engauge Learning | About Us</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Poppins", "Raleway", "Helvetica Neue", Arial, sans-serif;
+            background-color: #FFFFFF;
+            color: #1D1D1D;
+        }
+
+        .about-section {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            padding: 48px 64px;
+            background-color: #FFFFFF;
+        }
+
+        .section-inner {
+            width: 100%;
+            display: flex;
+            gap: 40px;
+            align-items: stretch;
+        }
+
+        .about-media {
+            margin: 0;
+            flex: 1;
+            display: flex;
+        }
+
+        .about-media img {
+            width: 100%;
+            height: auto;
+            border-radius: 24px;
+            object-fit: cover;
+            background-color: transparent;
+        }
+
+        .about-copy {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .about-copy h2 {
+            margin: 0 0 16px 0;
+            font-size: 28px;
+            line-height: 1.3;
+            color: #0047AB;
+        }
+
+        .about-copy p {
+            margin: 0 0 16px 0;
+            font-size: 18px;
+            line-height: 1.6;
+            color: #1D1D1D;
+        }
+
+        .about-copy p:last-child {
+            margin-bottom: 0;
+        }
+
+        .education-section {
+            width: 100%;
+            padding: 0 64px 64px 64px;
+            background-color: #FFFFFF;
+        }
+
+        .education-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .education-header h2 {
+            margin: 0 0 12px 0;
+            font-size: 28px;
+            color: #0047AB;
+        }
+
+        .education-header p {
+            margin: 0 0 32px 0;
+            font-size: 18px;
+            line-height: 1.6;
+            color: #1D1D1D;
+        }
+
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .education-card {
+            background-color: #EDEDED;
+            border-radius: 24px;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .card-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 16px;
+            background-color: #0047AB;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: #FFFFFF;
+            margin-bottom: 16px;
+        }
+
+        .education-card h3 {
+            margin: 0 0 12px 0;
+            font-size: 20px;
+            color: #0047AB;
+        }
+
+        .education-card ul {
+            margin: 0;
+            padding-left: 18px;
+            color: #1D1D1D;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .education-card li {
+            margin-bottom: 10px;
+        }
+
+        .education-card li:last-child {
+            margin-bottom: 0;
+        }
+
+        @media (max-width: 1024px) {
+            .about-section {
+                padding: 40px 32px;
             }
 
-            h1,
-            h2 {
-                margin-top: 32px;
-                font-weight: 600;
-                color: #0047AB;
+            .section-inner {
+                flex-direction: column;
             }
 
-            h1 {
-                margin-top: 0;
-                font-size: 36px;
-                line-height: 1.2;
+            .about-copy h2 {
+                font-size: 26px;
             }
 
-            h2 {
+            .about-copy p {
+                font-size: 17px;
+            }
+
+            .education-section {
+                padding: 48px 32px;
+            }
+
+            .education-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .about-section {
+                padding: 32px 20px;
+            }
+
+            .about-copy h2 {
                 font-size: 24px;
-                line-height: 1.3;
             }
 
-            h3 {
-                margin-top: 24px;
-                font-size: 20px;
-                font-weight: 600;
-            }
-
-            p {
-                margin-top: 16px;
+            .about-copy p {
                 font-size: 16px;
             }
 
-            section {
-                margin-bottom: 32px;
+            .education-section {
+                padding: 40px 20px;
             }
 
-            ul {
-                padding-left: 20px;
-                list-style-type: disc;
+            .education-header h2 {
+                font-size: 24px;
             }
 
-            .heading-text {
-                display: inline-block;
-                font-size: 0.85em;
+            .education-header p {
+                font-size: 16px;
             }
 
-            .body-text {
-                display: inline-block;
-                font-size: 0.9em;
+            .education-grid {
+                grid-template-columns: 1fr;
             }
-        </style>
-    </head>
-    <body>
-        <h1><span class="heading-text">Crescere Academy &mdash; About Us</span></h1>
-        <section>
-            <h2><span class="heading-text">Who We Are</span></h2>
-            <p>
-                <span class="body-text">
-                    For the last decade, Content Creation has been treated as a "side hustle," a "hobby," or a "lucky lottery ticket." We exist to change that
-                    definition. At Engauge Learning, we believe Content Creation is a legitimate, high-stakes profession, and just like any serious career, it requires
-                    structured education, professional discipline, and a strategic roadmap. We are moving the industry from "Viral Hacks" to "Career Longevity."
-                </span>
-            </p>
-        </section>
+        }
+    </style>
+</head>
 
-        <section>
-            <h2><span class="heading-text">Why Does Creator Education Matter?</span></h2>
-            <p>
-                <span class="body-text">
-                    Most people still learn through guesswork. There is no structured way to understand storytelling, audience behaviour, branding, analytics, or how to
-                    grow without burning out. Here’s how a formal approach to creator education can help you.
-                </span>
-            </p>
-            <h3><span class="body-text">For Learners and New Creators</span></h3>
-            <ul>
-                <li><span class="body-text">Learn how to start, grow, and monetize your content in a simple and structured way.</span></li>
-                <li><span class="body-text">Understand your niche, your audience, and how platforms actually work.</span></li>
-                <li><span class="body-text">Build confidence with clear steps instead of trial and error.</span></li>
-            </ul>
+<body>
+    <section class="about-section">
+        <div class="section-inner">
+            <figure class="about-media">
+                <img src="assets/who-we-are.png" alt="Engauge Learning team in the classroom" width="759" height="299" />
+            </figure>
+            <div class="about-copy">
+                <h2>Who We Are</h2>
+                <p>For the last decade, Content Creation has been treated as a "side hustle," a "hobby," or a "lucky lottery ticket."</p>
+                <p>We exist to change that definition.</p>
+                <p>At Engauge Learning, we believe Content Creation is a legitimate, high-stakes profession, and just like any serious career, it requires structured education, professional discipline, and a strategic roadmap.</p>
+                <p>We are moving the industry from "Viral Hacks" to "Career Longevity."</p>
+            </div>
+        </div>
+    </section>
 
-            <h3><span class="body-text">For Colleges, Universities, and Schools</span></h3>
-            <ul>
-                <li><span class="body-text">Add a modern creator program that fits with today’s digital skill needs.</span></li>
-                <li><span class="body-text">Help students learn content creation, storytelling, branding, and digital communication.</span></li>
-                <li><span class="body-text">Make your institution more appealing to Gen Z learners who prefer hands-on, practical courses.</span></li>
-            </ul>
+    <section class="education-section">
+        <div class="education-inner">
+            <div class="education-header">
+                <h2>Why does Creator education matter?</h2>
+                <p>Most people still learn through guesswork. There is no structured way to understand storytelling, audience behaviour, branding, analytics, or how to grow without burning out. Here's how a formal approach to creator education can help you.</p>
+            </div>
+            <div class="education-grid">
+                <article class="education-card">
+                    <div class="card-icon">👩‍🎓</div>
+                    <h3>Learners &amp; New Creators</h3>
+                    <ul>
+                        <li>Learn how to start, grow, and monetize your content in a simple and structured way.</li>
+                        <li>Understand your niche, your audience, and how platforms actually work.</li>
+                        <li>Build confidence with clear steps instead of trial and error.</li>
+                    </ul>
+                </article>
+                <article class="education-card">
+                    <div class="card-icon">🏛️</div>
+                    <h3>Colleges, Universities, and Schools</h3>
+                    <ul>
+                        <li>Learn how to start, grow, and monetize your content in a simple and structured way.</li>
+                        <li>Understand your niche, your audience, and how platforms actually work.</li>
+                        <li>Build confidence with clear steps instead of trial and error.</li>
+                    </ul>
+                </article>
+                <article class="education-card">
+                    <div class="card-icon">🏢</div>
+                    <h3>Brands, Agencies, and Studios</h3>
+                    <ul>
+                        <li>Learn how to start, grow, and monetize your content in a simple and structured way.</li>
+                        <li>Understand your niche, your audience, and how platforms actually work.</li>
+                        <li>Build confidence with clear steps instead of trial and error.</li>
+                    </ul>
+                </article>
+            </div>
+        </div>
+    </section>
+</body>
 
-            <h3><span class="body-text">For Brands, Agencies, and Studios</span></h3>
-            <ul>
-                <li><span class="body-text">Access young creators who understand the industry and approach the market as professionals.</span></li>
-                <li><span class="body-text">Shape the training so students learn exactly what the industry expects.</span></li>
-                <li><span class="body-text">Build a fresh talent pipeline for campaigns by building long-term creator partnerships.</span></li>
-            </ul>
-        </section>
-    </body>
 </html>
