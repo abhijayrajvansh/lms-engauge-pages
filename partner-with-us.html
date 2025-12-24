@@ -306,42 +306,48 @@
     </section>
 
     <!-- UPDATED: submit handler (sends the 4 fields to your Apps Script URL) -->
-        <script>
-    const scriptURL =
-        "https://script.google.com/a/macros/engaugelearning.com/s/AKfycbwZqi2Vm392tBdFoxPNor6iDeUJ_4-RAtTp0Dr6OaoQriQTtmOykaoNat1Nl_WMveKn/exec";
+     <script>
+        const scriptURL =
+            "https://script.google.com/a/macros/engaugelearning.com/s/AKfycbwZqi2Vm392tBdFoxPNor6iDeUJ_4-RAtTp0Dr6OaoQriQTtmOykaoNat1Nl_WMveKn/exec";
 
-    const form = document.getElementById("partnerForm");
-    const btn = form.querySelector('button[type="submit"]');
+        const form = document.getElementById("partnerForm");
+        const btn = form.querySelector('button[type="submit"]');
 
-    form.addEventListener("submit", async (e) => {
-        e.preventDefault();
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
 
-        btn.disabled = true;
-        const originalText = btn.textContent;
-        btn.textContent = "Submitting...";
+            btn.disabled = true;
+            const originalText = btn.textContent;
+            btn.textContent = "Submitting...";
 
-        const payload = Object.fromEntries(new FormData(form).entries());
+            const fd = new FormData(form);
 
-        try {
-        await fetch(scriptURL, {
-            method: "POST",
-            mode: "no-cors",
-            headers: { "Content-Type": "text/plain;charset=utf-8" },
-            body: JSON.stringify(payload),
+            // Make sure these name= values exist in your inputs
+            const full_name = encodeURIComponent(fd.get("full_name") || "");
+            const email = encodeURIComponent(fd.get("email") || "");
+            const phone = encodeURIComponent(fd.get("phone") || "");
+            const institution = encodeURIComponent(fd.get("institution") || "");
+
+            const url =
+            `${scriptURL}?full_name=${full_name}&email=${email}&phone=${phone}&institution=${institution}&_ts=${Date.now()}`;
+
+            // Beacon request (works even with strict CORS)
+            const img = new Image();
+            img.onload = () => {
+            alert("Submitted successfully!");
+            form.reset();
+            btn.disabled = false;
+            btn.textContent = originalText;
+            };
+            img.onerror = () => {
+            alert("Submit failed. Please try again.");
+            btn.disabled = false;
+            btn.textContent = originalText;
+            };
+            img.src = url;
         });
-
-        alert("Submitted successfully!");
-        form.reset();
-        } catch (err) {
-        alert("Network error: " + err.message);
-        } finally {
-        btn.disabled = false;
-        btn.textContent = originalText;
-        }
-    });
     </script>
-
-
+    
 </body>
 
 </html>
