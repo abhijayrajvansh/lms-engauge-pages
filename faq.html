@@ -37,6 +37,12 @@
             color: #0047AB;
         }
 
+        .faq-heading-emphasis {
+            display: block;
+            font-size: 50px;
+            font-weight: 500;
+        }
+
         .faq-description {
             margin: 0;
             font-size: 18px;
@@ -108,9 +114,18 @@
             font-size: 16px;
             font-weight: 500;
             color: #FFFFFF;
+            text-decoration: none;
             background: #1053AF;
             cursor: pointer;
             box-shadow: 0 12px 20px rgba(0, 0, 0, 0.16);
+        }
+
+        .cta-button:link,
+        .cta-button:visited,
+        .cta-button:hover,
+        .cta-button:focus,
+        .cta-button:active {
+            color: #FFFFFF;
         }
 
         .cta-button:hover {
@@ -260,7 +275,7 @@
     <section class="faq-section">
         <div class="faq-info-panel">
             <div>
-                <h2 class="faq-heading">Frequently Asked Questions</h2>
+                <h2 class="faq-heading"><span class="faq-heading-emphasis">You might be wondering...</span></h2>
                 <p class="faq-description">Answers to the most common questions creators ask about our programs.</p>
             </div>
             <div class="faq-cta-wrapper">
