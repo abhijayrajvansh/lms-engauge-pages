@@ -159,6 +159,28 @@
             border: 0;
         }
 
+        @media (min-width: 787px) {
+            .header {
+                gap: 40px;
+            }
+
+            .nav-actions {
+                flex: 1;
+                display: grid;
+                grid-template-columns: minmax(200px, 1fr) auto;
+                align-items: center;
+            }
+
+            .nav-links {
+                justify-content: center;
+                width: 100%;
+            }
+
+            .buttons {
+                justify-self: end;
+            }
+        }
+
         @media (max-width: 786px) {
             .header {
                 flex-wrap: wrap;
