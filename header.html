@@ -19,6 +19,7 @@
             justify-content: space-between;
             padding: 20px 0px;
             box-sizing: border-box;
+            position: relative;
         }
 
         .logo a {
@@ -28,7 +29,12 @@
 
         .logo img {
             height: 32px;
-            /* Replace with your logo */
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 32px;
         }
 
         .nav-links {
@@ -46,36 +52,6 @@
         .nav-links a:hover {
             color: #064DAD;
             text-decoration: underline;
-        }
-
-        .search-box {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-        }
-
-        .search-container {
-            width: 60%;
-            max-width: 600px;
-            display: flex;
-            align-items: center;
-            border: 1px solid #c8d8eb;
-            padding: 8px 14px;
-            border-radius: 8px;
-            color: #777;
-        }
-
-        .search-container input {
-            border: none;
-            outline: none;
-            width: 100%;
-            font-size: 14px;
-        }
-
-        .search-icon {
-            margin-right: 8px;
-            font-size: 16px;
-            opacity: 0.7;
         }
 
         .buttons {
@@ -110,6 +86,125 @@
             background-color: #0047AB;
             color: #FFFFFF;
         }
+
+        .menu-toggle {
+            display: none;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            border: 2px solid #0047AB;
+            background-color: #FFFFFF;
+            cursor: pointer;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .menu-toggle:focus-visible {
+            outline: none;
+            box-shadow: 0px 0px 0px 3px rgba(0, 71, 171, 0.3);
+        }
+
+        .menu-icon,
+        .menu-icon::before,
+        .menu-icon::after {
+            display: block;
+            width: 18px;
+            height: 2px;
+            border-radius: 999px;
+            background-color: #1D1D1D;
+            transition: transform 0.2s ease, opacity 0.2s ease;
+        }
+
+        .menu-icon {
+            position: relative;
+        }
+
+        .menu-icon::before,
+        .menu-icon::after {
+            position: absolute;
+            left: 0;
+            top: 0;
+            content: "";
+        }
+
+        .menu-icon::before {
+            transform: translateY(-6px);
+        }
+
+        .menu-icon::after {
+            transform: translateY(6px);
+        }
+
+        .menu-toggle[aria-expanded="true"] .menu-icon {
+            background-color: transparent;
+        }
+
+        .menu-toggle[aria-expanded="true"] .menu-icon::before {
+            transform: rotate(45deg);
+        }
+
+        .menu-toggle[aria-expanded="true"] .menu-icon::after {
+            transform: rotate(-45deg);
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+        }
+
+        @media (max-width: 786px) {
+            .header {
+                flex-wrap: wrap;
+                gap: 16px;
+            }
+
+            .logo img {
+                height: 24px;
+            }
+
+            .menu-toggle {
+                display: inline-flex;
+            }
+
+            .nav-actions {
+                width: 100%;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 24px;
+                padding: 12px 0px;
+                border-top: 1px solid #EDEDED;
+                display: none;
+            }
+
+            .nav-actions.is-open {
+                display: flex;
+            }
+
+            .nav-links {
+                width: 100%;
+                flex-direction: column;
+                gap: 16px;
+                font-size: 16px;
+            }
+
+            .buttons {
+                width: 100%;
+                flex-direction: column;
+            }
+
+            .btn,
+            .btn-outline,
+            .btn-secondary {
+                width: 100%;
+            }
+        }
     </style>
 </head>
 
@@ -119,27 +214,46 @@
 
         <!-- Logo -->
         <div class="logo">
-            <!-- Replace with your image -->
             <a href="/">
                 <img src="https://imgproxy.learnyst.com/learnyst-user-assets/websites/191687/images/Primary_Logo_lyst1763451833535.png" alt="Logo">
             </a>
         </div>
 
-        <!-- Navigation Links -->
-        <nav class="nav-links">
-            <a href="/about-us">About Us</a>
-            <a href="/all-courses">Courses</a>
-            <a href="/contact-us">Contact Us</a>
-            <a href="https://forms.gle/39WGk5TUzk6ftFzz8" target="_blank" rel="noopener noreferrer">Apply as Mentor</a>
-        </nav>
+        <button class="menu-toggle" type="button" aria-controls="primary-navigation" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="menu-icon" aria-hidden="true"></span>
+        </button>
 
-        <!-- Buttons -->
-        <div class="buttons">
-            <a class="btn btn-outline" href="https://learn.engaugelearning.com/learn/account/signin">SIGN IN</a>
-            <a class="btn btn-secondary" href="https://learn.engaugelearning.com/learn/account/signup?">SIGN UP</a>
+        <div class="nav-actions" id="primary-navigation">
+            <!-- Navigation Links -->
+            <nav class="nav-links">
+                <a href="/about-us">About Us</a>
+                <a href="/all-courses">Courses</a>
+                <a href="/contact-us">Contact Us</a>
+                <a href="https://forms.gle/39WGk5TUzk6ftFzz8" target="_blank" rel="noopener noreferrer">Apply as Mentor</a>
+            </nav>
+
+            <!-- Buttons -->
+            <div class="buttons">
+                <a class="btn btn-outline" href="https://learn.engaugelearning.com/learn/account/signin">SIGN IN</a>
+                <a class="btn btn-secondary" href="https://learn.engaugelearning.com/learn/account/signup?">SIGN UP</a>
+            </div>
         </div>
 
     </div>
+
+    <script>
+        const menuToggle = document.querySelector(".menu-toggle");
+        const navActions = document.querySelector(".nav-actions");
+
+        if (menuToggle && navActions) {
+            menuToggle.addEventListener("click", function () {
+                const willOpen = !navActions.classList.contains("is-open");
+                navActions.classList.toggle("is-open", willOpen);
+                menuToggle.setAttribute("aria-expanded", willOpen.toString());
+            });
+        }
+    </script>
 
 </body>
 
