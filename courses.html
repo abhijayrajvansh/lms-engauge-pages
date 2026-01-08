@@ -86,6 +86,8 @@
             padding-bottom: 16px;
             -ms-overflow-style: none;
             scrollbar-width: none;
+            scroll-snap-type: x mandatory;
+            overscroll-behavior-x: contain;
         }
 
         .course-carousel::-webkit-scrollbar {
@@ -103,6 +105,7 @@
             display: flex;
             flex-direction: column;
             height: 420px;
+            scroll-snap-align: start;
         }
 
         .course-thumb {
@@ -199,6 +202,20 @@
         @media (max-width: 768px) {
             .courses-section {
                 padding: 32px 20px 48px;
+            }
+
+            .courses-header {
+                justify-content: space-between;
+            }
+
+            .course-carousel {
+                padding: 0 4px 16px;
+                gap: 16px;
+            }
+
+            .course-card {
+                width: 100%;
+                min-width: 100%;
             }
         }
     </style>
@@ -351,31 +368,62 @@
         </div>
     </section>
     <script>
-        const carousel = document.getElementById("courseCarousel");
-        const navButtons = document.querySelectorAll(".slider-nav button");
+        (function () {
+            const carousel = document.getElementById("courseCarousel");
+            const navButtons = document.querySelectorAll(".slider-nav button");
+
+            if (!carousel) {
+                return;
+            }
+
+        const getGapValue = () => {
+            const style = window.getComputedStyle(carousel);
+            const gapToken = style.columnGap || style.gap || style.rowGap || "0";
+            const parsed = parseFloat(gapToken);
+            return Number.isNaN(parsed) ? 0 : parsed;
+        };
+
+        const getCardStride = () => {
+            const firstCard = carousel.querySelector(".course-card");
+            if (!firstCard) {
+                return carousel.clientWidth;
+            }
+            return firstCard.getBoundingClientRect().width + getGapValue();
+        };
 
         const updateButtonState = () => {
+            const maxScroll = carousel.scrollWidth - carousel.clientWidth;
             navButtons.forEach((btn) => {
                 if (btn.dataset.direction === "prev") {
                     btn.disabled = carousel.scrollLeft <= 0;
                 } else {
-                    const maxScroll = carousel.scrollWidth - carousel.clientWidth;
                     btn.disabled = carousel.scrollLeft >= maxScroll;
                 }
             });
         };
 
-        navButtons.forEach((button) => {
-            button.addEventListener("click", () => {
-                const direction = button.dataset.direction === "next" ? 1 : -1;
-                const scrollAmount = carousel.clientWidth * 0.8;
-                carousel.scrollBy({ left: direction * scrollAmount, behavior: "smooth" });
-                setTimeout(updateButtonState, 300);
-            });
-        });
+        const scrollToCard = (direction) => {
+            const stride = getCardStride();
+            const maxScroll = carousel.scrollWidth - carousel.clientWidth;
+            const target = Math.max(
+                0,
+                Math.min(carousel.scrollLeft + direction * stride, maxScroll)
+            );
+            carousel.scrollTo({ left: target, behavior: "smooth" });
+            window.setTimeout(updateButtonState, 320);
+        };
 
-        carousel.addEventListener("scroll", updateButtonState, { passive: true });
-        updateButtonState();
+            navButtons.forEach((button) => {
+                button.addEventListener("click", () => {
+                    const direction = button.dataset.direction === "next" ? 1 : -1;
+                    scrollToCard(direction);
+                });
+            });
+
+            carousel.addEventListener("scroll", updateButtonState, { passive: true });
+            window.addEventListener("resize", updateButtonState);
+            updateButtonState();
+        })();
     </script>
 </body>
 </html>
