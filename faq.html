@@ -132,107 +132,41 @@
             opacity: 0.9;
         }
 
-        .faq-column {
+        .faq-form-panel {
+            width: 100%;
+            height: 504px;
+            border-radius: 32px;
+            background: #FFFFFF;
+            box-shadow: 0 24px 40px rgba(0, 0, 0, 0.12);
+            padding: 16px;
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            overflow: hidden;
         }
 
-        .faq-help-center {
-            margin: 8px 0 0;
+        .faq-form-embed {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 24px;
+            background: #FFFFFF;
+        }
+
+        .faq-form-note {
+            margin: 20px 0 0;
             font-size: 16px;
-            color: #1D1D1D;
+            color: rgba(29, 29, 29, 0.72);
             text-align: center;
         }
 
-        .faq-help-center a {
+        .faq-form-note a {
             color: #0047AB;
             font-weight: 600;
             text-decoration: none;
         }
 
-        .faq-help-center a:hover {
+        .faq-form-note a:hover {
             text-decoration: underline;
-        }
-
-        .faq-card {
-            border: 2px solid #FFFFFF;
-            border-radius: 28px;
-            padding: 28px 36px 32px 36px;
-            background: transparent;
-            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08), 0 6px 18px rgba(0, 71, 171, 0.08);
-            transition: box-shadow 180ms ease, border-color 180ms ease, background-color 180ms ease;
-        }
-
-        .faq-card:hover {
-            background: rgba(255, 255, 255, 0.04);
-            border-color: rgba(255, 255, 255, 0.72);
-            box-shadow: 0 24px 44px rgba(0, 0, 0, 0.12), 0 10px 26px rgba(0, 71, 171, 0.14);
-        }
-
-        .faq-toggle {
-            display: flex;
-            width: 100%;
-            align-items: center;
-            justify-content: space-between;
-            gap: 32px;
-            cursor: pointer;
-            padding: 0;
-            background: transparent;
-            border: none;
-            text-align: left;
-        }
-
-        .faq-question {
-            font-size: 18px;
-            font-weight: 400;
-            letter-spacing: 0.01em;
-            color: #1D1D1D;
-        }
-
-        .faq-icon {
-            width: 20px;
-            height: 20px;
-            position: relative;
-        }
-
-        .faq-icon::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            margin: auto;
-            width: 0;
-            height: 0;
-            border-left: 7px solid transparent;
-            border-right: 7px solid transparent;
-            border-top: 9px solid #1D1D1D;
-            transition: transform 160ms ease;
-        }
-
-        .faq-card[data-open="true"] .faq-icon::before {
-            transform: rotate(180deg);
-        }
-
-        .faq-answer-wrapper {
-            overflow: hidden;
-            max-height: 0;
-            opacity: 0;
-            transition: max-height 220ms ease, opacity 180ms ease;
-        }
-
-        .faq-card[data-open="true"] .faq-answer-wrapper {
-            max-height: 400px;
-            opacity: 1;
-            margin-top: 18px;
-        }
-
-        .faq-answer {
-            display: block;
-            margin: 0;
-            font-size: 15px;
-            line-height: 1.7;
-            color: rgba(29, 29, 29, 0.82);
-            font-weight: 400;
         }
 
         @media (max-width: 900px) {
@@ -244,17 +178,13 @@
                 text-align: center;
                 align-items: center;
             }
+
+            .faq-form-panel {
+                height: 448px;
+            }
         }
 
         @media (max-width: 599px) {
-            .faq-card {
-                padding: 20px 24px;
-            }
-
-            .faq-question {
-                font-size: 16px;
-            }
-
             .faq-cta {
                 padding: 28px;
             }
@@ -262,6 +192,10 @@
             .faq-cta-footer {
                 flex-direction: column;
                 align-items: center;
+            }
+
+            .faq-form-panel {
+                height: 392px;
             }
         }
     </style>
@@ -271,8 +205,8 @@
     <section class="faq-section">
         <div class="faq-info-panel">
             <div>
-                <h2 class="faq-heading"><span class="faq-heading-emphasis">You might be wondering...</span></h2>
-                <p class="faq-description">Answers to the most common questions creators ask about our programs.</p>
+                <h2 class="faq-heading"><span class="faq-heading-emphasis">Not sure where to start or what&apos;s next?</span></h2>
+                <p class="faq-description">Share your question with us, and we’ll help you find clarity.</p>
             </div>
             <div class="faq-cta-wrapper">
                 <div class="faq-cta">
@@ -295,82 +229,16 @@
                 </div>
             </div>
         </div>
-        <div class="faq-column">
-            <div class="faq-card" data-open="false">
-                <button class="faq-toggle" aria-expanded="false">
-                    <span class="faq-question">When do the courses launch?</span>
-                    <span class="faq-icon" aria-hidden="true"></span>
-                </button>
-                <div class="faq-answer-wrapper">
-                    <span class="faq-answer">
-                        Courses are launching in phases. Course 9 (Creator Psychology) is live now. Other courses are launching soon. Join the waitlist to get early access.
-                    </span>
-                </div>
-            </div>
-            <div class="faq-card" data-open="false">
-                <button class="faq-toggle" aria-expanded="false">
-                    <span class="faq-question">Is there community support or mentoring?</span>
-                    <span class="faq-icon" aria-hidden="true"></span>
-                </button>
-                <div class="faq-answer-wrapper">
-                    <span class="faq-answer">
-                        Yes. Submit your queries through the queries section on the course platform and our course experts will respond. You can also reach out via email at contact@engaugelearning.com for support.
-                    </span>
-                </div>
-            </div>
-            <div class="faq-card" data-open="false">
-                <button class="faq-toggle" aria-expanded="false">
-                    <span class="faq-question">What if I do not find the course helpful?</span>
-                    <span class="faq-icon" aria-hidden="true"></span>
-                </button>
-                <div class="faq-answer-wrapper">
-                    <span class="faq-answer">
-                        We do not offer refunds once purchased. Please refer to our refund policy for complete details.
-                    </span>
-                </div>
-            </div>
-            <div class="faq-card" data-open="false">
-                <button class="faq-toggle" aria-expanded="false">
-                    <span class="faq-question">Can I download course materials or access offline?</span>
-                    <span class="faq-icon" aria-hidden="true"></span>
-                </button>
-                <div class="faq-answer-wrapper">
-                    <span class="faq-answer">
-                        Course materials like templates, worksheets, and projects can be downloaded for offline use. However, video courses can only be accessed online through the platform.
-                    </span>
-                </div>
-            </div>
-            <p class="faq-help-center">Got more questions? <a href="/help-center">Visit the help center</a></p>
+        <div class="faq-form-panel">
+            <iframe class="faq-form-embed"
+                src="https://docs.google.com/forms/d/e/1FAIpQLSe5J87URCKCbOeQzSByDwYTOL2_W0alSC3vYE6z9h6sLXtCCg/viewform?embedded=true"
+                title="Engauge Learning FAQ Inquiry Form" width="100%" frameborder="0" marginheight="0"
+                marginwidth="0" scrolling="yes" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                Loading...
+            </iframe>
+            <p class="faq-form-note">Prefer browsing answers? <a href="/help-center">Visit the help center</a></p>
         </div>
     </section>
-
-    <script>
-        const faqCards = document.querySelectorAll('.faq-card');
-
-        const toggleCard = (card, shouldOpen) => {
-            card.setAttribute('data-open', String(shouldOpen));
-            const toggle = card.querySelector('.faq-toggle');
-            if (toggle) {
-                toggle.setAttribute('aria-expanded', String(shouldOpen));
-            }
-        };
-
-        document.querySelectorAll('.faq-toggle').forEach((button) => {
-            button.addEventListener('click', (event) => {
-                event.preventDefault();
-                const card = button.closest('.faq-card');
-                const isOpen = card.getAttribute('data-open') === 'true';
-
-                faqCards.forEach((faqCard) => {
-                    if (faqCard !== card) {
-                        toggleCard(faqCard, false);
-                    }
-                });
-
-                toggleCard(card, !isOpen);
-            });
-        });
-    </script>
 </body>
 
 </html>
