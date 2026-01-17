@@ -7,11 +7,6 @@
     <title>Header Template</title>
 
     <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-        }
-
         .header {
             width: 100%;
             display: flex;
@@ -257,8 +252,8 @@
 
             <!-- Buttons -->
             <div class="buttons">
-                <a class="btn btn-outline" href="https://learn.engaugelearning.com/learn/account/signin">SIGN IN</a>
-                <a class="btn btn-secondary" href="https://learn.engaugelearning.com/learn/account/signup?">SIGN UP</a>
+                <a class="btn btn-outline" href="https://www.engaugelearning.com/learn/account/signin">SIGN IN</a>
+                <a class="btn btn-secondary" href="https://www.engaugelearning.com/learn/account/signup?">SIGN UP</a>
             </div>
         </div>
 
@@ -269,7 +264,7 @@
         const navActions = document.querySelector(".nav-actions");
 
         if (menuToggle && navActions) {
-            menuToggle.addEventListener("click", function () {
+            menuToggle.addEventListener("click", function() {
                 const willOpen = !navActions.classList.contains("is-open");
                 navActions.classList.toggle("is-open", willOpen);
                 menuToggle.setAttribute("aria-expanded", willOpen.toString());
